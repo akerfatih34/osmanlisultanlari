@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osmanlı Sultanları — Tarihin Büyük Hükümdarları</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d4a843;
+    --gold-light: #f0c96a;
+    --gold-dark: #8a6a1a;
+    --bg: #0c0b08;
+    --bg2: #13110d;
+    --bg3: #1c1810;
+    --bg4: #241f14;
+    --text: #e8dcc8;
+    --text-dim: #9a8a70;
+    --red: #8b1a1a;
+    --border: rgba(212,168,67,0.2);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--text); font-family:'Libre Baskerville',Georgia,serif; overflow-x:hidden; }
+
+  /* NAV */
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:18px 40px;
+    display:flex; justify-content:space-between; align-items:center;
+    background:rgba(12,11,8,0);
+    border-bottom:1px solid transparent;
+    transition:all 0.4s;
+  }
+  nav.scrolled {
+    background:rgba(12,11,8,0.96);
+    border-bottom:1px solid var(--border);
+    backdrop-filter:blur(10px);
+  }
+  .nav-logo {
+    font-family:'Cinzel',serif; font-size:1.1rem; font-weight:700;
+    color:var(--gold); letter-spacing:2px; text-decoration:none;
+  }
+  .nav-sub { font-size:0.6rem; color:var(--text-dim); letter-spacing:3px; display:block; margin-top:2px; }
+  .nav-links { display:flex; gap:32px; list-style:none; }
+  .nav-links a {
+    color:var(--text-dim); text-decoration:none;
+    font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:2px;
+    text-transform:uppercase; transition:color 0.3s;
+  }
+  .nav-links a:hover { color:var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height:100vh; display:flex; flex-direction:column;
+    justify-content:center; align-items:center; text-align:center;
+    padding:100px 20px 60px;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(139,26,26,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 50% 70%, rgba(212,168,67,0.06) 0%, transparent 70%);
+  }
+  .hero-crescent {
+    font-size:3.5rem; color:var(--gold); opacity:0.7;
+    animation:floatY 4s ease-in-out infinite; margin-bottom:20px;
+  }
+  @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  .hero-badge {
+    font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:6px;
+    color:var(--gold); text-transform:uppercase; opacity:0.8; margin-bottom:20px;
+  }
+  .hero-title {
+    font-family:'Cinzel',serif;
+    font-size:clamp(3rem,8vw,6.5rem); font-weight:900; line-height:1.05;
+    background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 40%,#b8832e 70%,var(--gold-light) 100%);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    margin-bottom:12px;
+  }
+  .hero-sub {
+    font-family:'Cinzel',serif; font-size:clamp(0.85rem,2vw,1.2rem);
+    color:var(--text-dim); letter-spacing:5px; text-transform:uppercase; margin-bottom:28px;
+  }
+  .hero-desc {
+    max-width:580px; font-size:0.95rem; color:var(--text-dim);
+    line-height:1.9; margin-bottom:44px;
+  }
+  .divider { display:flex; align-items:center; gap:14px; justify-content:center; margin-bottom:44px; }
+  .divider span { width:70px; height:1px; background:linear-gradient(90deg,transparent,var(--gold-dark)); }
+  .divider span:last-child { background:linear-gradient(90deg,var(--gold-dark),transparent); }
+  .divider em { color:var(--gold); font-size:1.1rem; font-style:normal; }
+  .hero-stats { display:flex; gap:44px; flex-wrap:wrap; justify-content:center; }
+  .stat { text-align:center; }
+  .stat-n { font-family:'Cinzel',serif; font-size:2rem; font-weight:700; color:var(--gold); display:block; }
+  .stat-l { font-size:0.65rem; letter-spacing:3px; color:var(--text-dim); text-transform:uppercase; display:block; margin-top:4px; }
+  .scroll-hint {
+    position:absolute; bottom:28px; left:50%; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:8px; opacity:0.45;
+  }
+  .scroll-hint span { font-family:'Cinzel',serif; font-size:0.55rem; letter-spacing:4px; color:var(--text-dim); text-transform:uppercase; }
+  .arrow { width:18px; height:18px; border-right:1px solid var(--gold); border-bottom:1px solid var(--gold); transform:rotate(45deg); animation:arrowBounce 2s infinite; }
+  @keyframes arrowBounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(6px)} }
+
+  /* TIMELINE STRIP */
+  .tstrip { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:44px 40px; }
+  .tstrip-inner { max-width:1100px; margin:0 auto; position:relative; }
+  .tline { position:absolute; top:50%; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,var(--gold-dark) 15%,var(--gold-dark) 85%,transparent); }
+  .tnodes { display:flex; justify-content:space-between; position:relative; z-index:2; }
+  .tnode { display:flex; flex-direction:column; align-items:center; gap:7px; }
+  .tdot { width:11px; height:11px; border-radius:50%; background:var(--gold-dark); border:2px solid var(--bg2); box-shadow:0 0 0 1px var(--gold-dark); }
+  .tnode.lit .tdot { background:var(--gold); box-shadow:0 0 10px rgba(212,168,67,0.5); }
+  .tyear { font-family:'Cinzel',serif; font-size:0.65rem; color:var(--text-dim); }
+  .tnode.lit .tyear { color:var(--gold); }
+  .tname { font-family:'Cinzel',serif; font-size:0.58rem; color:var(--text-dim); text-align:center; max-width:75px; line-height:1.3; }
+  .tnode.lit .tname { color:var(--gold-light); }
+
+  /* SULTANS SECTION */
+  .section { padding:90px 40px; max-width:1200px; margin:0 auto; }
+  .sec-hd { text-align:center; margin-bottom:60px; }
+  .sec-tag { font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:5px; color:var(--gold); text-transform:uppercase; opacity:0.8; display:block; margin-bottom:14px; }
+  .sec-title { font-family:'Cinzel',serif; font-size:clamp(1.7rem,3.5vw,2.6rem); font-weight:700; color:var(--gold); margin-bottom:14px; }
+  .sec-desc { font-size:0.9rem; color:var(--text-dim); max-width:580px; margin:0 auto; line-height:1.8; }
+
+  /* SULTAN GRID */
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:26px; }
+  .card {
+    background:var(--bg2); border:1px solid var(--border); border-radius:3px;
+    overflow:hidden; text-decoration:none; display:block;
+    transition:all 0.4s;
+  }
+  .card:hover { transform:translateY(-7px); border-color:var(--gold-dark); box-shadow:0 22px 50px rgba(0,0,0,0.5),0 0 28px rgba(212,168,67,0.07); }
+  .card-top {
+    height:175px; position:relative; display:flex; align-items:flex-end; padding:18px 20px; overflow:hidden;
+  }
+  .card-icon { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:5.5rem; opacity:0.08; transition:opacity 0.4s; }
+  .card:hover .card-icon { opacity:0.15; }
+  .card-grad { position:absolute; inset:0; background:linear-gradient(to top,var(--bg2) 0%,transparent 65%); z-index:1; }
+  .card-num { position:absolute; top:14px; right:14px; font-family:'Cinzel',serif; font-size:0.58rem; letter-spacing:2px; color:var(--gold); opacity:0.65; z-index:2; background:rgba(12,11,8,0.55); padding:3px 9px; border:1px solid var(--border); }
+  .card-era { position:relative; z-index:2; font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:2px; color:var(--gold); text-transform:uppercase; }
+  .card-body { padding:18px 22px 22px; border-top:1px solid var(--border); }
+  .card-name { font-family:'Cinzel',serif; font-size:1.25rem; font-weight:700; color:var(--gold-light); margin-bottom:5px; line-height:1.2; }
+  .card-epithet { font-size:0.72rem; color:var(--text-dim); font-style:italic; margin-bottom:13px; }
+  .card-desc { font-size:0.82rem; color:var(--text-dim); line-height:1.7; margin-bottom:16px; }
+  .card-tags { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:16px; }
+  .tag { font-family:'Cinzel',serif; font-size:0.58rem; letter-spacing:1px; padding:3px 9px; border:1px solid var(--border); color:var(--text-dim); border-radius:2px; }
+  .card-ft { display:flex; justify-content:space-between; align-items:center; }
+  .card-years { font-family:'Cinzel',serif; font-size:0.68rem; color:var(--gold-dark); letter-spacing:2px; }
+  .card-cta { font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:2px; color:var(--gold); display:flex; align-items:center; gap:6px; transition:gap 0.3s; }
+  .card-cta::after { content:'→'; }
+  .card:hover .card-cta { gap:10px; }
+
+  /* FEATURED CARD */
+  .card.featured { border-color:rgba(212,168,67,0.35); }
+  .card.featured .card-name { color:var(--gold); }
+  .card.featured .card-body { border-top-color:rgba(212,168,67,0.28); }
+  .card.featured .card-years { color:var(--gold-dark); }
+  .card.featured .card-cta { color:var(--gold); }
+
+  /* DYNASTY STATS */
+  .dyn { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:72px 40px; }
+  .dyn-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); }
+  .dyn-stat { background:var(--bg2); padding:36px 28px; text-align:center; }
+  .dyn-icon { font-size:1.8rem; margin-bottom:14px; display:block; }
+  .dyn-n { font-family:'Cinzel',serif; font-size:2.4rem; font-weight:700; color:var(--gold); display:block; margin-bottom:7px; }
+  .dyn-l { font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:3px; color:var(--text-dim); text-transform:uppercase; }
+  .dyn-d { font-size:0.78rem; color:var(--text-dim); margin-top:7px; line-height:1.6; }
+
+  /* EXPANSION BARS */
+  .emp-sec { padding:90px 40px; max-width:1200px; margin:0 auto; }
+  .emp-wrap { background:var(--bg3); border:1px solid var(--border); border-radius:3px; padding:44px; margin-top:44px; }
+  .exp-item { display:grid; grid-template-columns:160px 1fr; gap:20px; align-items:center; margin-bottom:16px; }
+  .exp-item:last-child { margin-bottom:0; }
+  .exp-lbl { font-family:'Cinzel',serif; font-size:0.78rem; color:var(--gold); }
+  .exp-lbl small { color:var(--text-dim); font-size:0.62rem; display:block; margin-top:3px; }
+  .exp-bar { height:26px; background:linear-gradient(90deg,var(--red) 0%,var(--gold-dark) 100%); border-radius:2px; display:flex; align-items:center; padding-left:10px; transition:width 1.6s ease; min-width:4%; }
+  .exp-bar span { font-family:'Cinzel',serif; font-size:0.62rem; color:rgba(255,255,255,0.85); white-space:nowrap; }
+
+  /* QUOTE */
+  .quote-wrap { text-align:center; padding:70px 40px; max-width:760px; margin:0 auto; }
+  .qmark { font-size:5rem; color:var(--gold-dark); line-height:0.4; opacity:0.4; font-family:Georgia,serif; display:block; margin-bottom:20px; }
+  .qtext { font-size:1.2rem; font-style:italic; color:var(--text); line-height:1.8; margin-bottom:20px; }
+  .qsrc { font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:3px; color:var(--gold); text-transform:uppercase; }
+
+  /* FOOTER */
+  footer { background:var(--bg); border-top:1px solid var(--border); padding:56px 40px 36px; text-align:center; }
+  .ft-logo { font-family:'Cinzel',serif; font-size:1.3rem; font-weight:700; color:var(--gold); letter-spacing:3px; display:block; margin-bottom:14px; }
+  .ft-desc { font-size:0.82rem; color:var(--text-dim); max-width:480px; margin:0 auto 28px; line-height:1.7; }
+  .ft-bottom { border-top:1px solid var(--border); padding-top:20px; font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:2px; color:var(--text-dim); text-transform:uppercase; }
+
+  /* ANIMATIONS */
+  @keyframes fadeInUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.8s,transform 0.8s; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* RESPONSIVE */
+  @media(max-width:768px){
+    nav{padding:14px 18px;} .nav-links{display:none;}
+    .section,.emp-sec{padding:56px 18px;}
+    .grid{grid-template-columns:1fr;}
+    .dyn-inner{grid-template-columns:1fr;}
+    .exp-item{grid-template-columns:100px 1fr;}
+    .tnodes{display:none;}
+    .hero-stats{gap:22px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Osmanlı Sultanları<span class="nav-sub">1299 — 1922</span></a>
+  <ul class="nav-links">
+    <li><a href="#sultanlar">Sultanlar</a></li>
+    <li><a href="#imparatorluk">İmparatorluk</a></li>
+    <li><a href="#miras">Miras</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="position:relative;">
+  <div class="hero-crescent">☽</div>
+  <div class="hero-badge">Tarihin En Uzun Soluklu Hanedanı</div>
+  <h1 class="hero-title">Osmanlı Sultanları</h1>
+  <p class="hero-sub">Kuruluştan Çöküşe &nbsp;·&nbsp; 623 Yıl</p>
+  <p class="hero-desc">Üç kıtaya hükmeden, medeniyetler inşa eden ve tarihin seyrini değiştiren büyük hükümdarların destansı hikayeleri.</p>
+  <div class="divider"><span></span><em>✦</em><span></span></div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-n" data-count="36">0</span><span class="stat-l">Padişah</span></div>
+    <div class="stat"><span class="stat-n" data-count="623">0</span><span class="stat-l">Yıl Hüküm</span></div>
+    <div class="stat"><span class="stat-n" data-count="3">0</span><span class="stat-l">Kıta</span></div>
+    <div class="stat"><span class="stat-n" data-count="5200000">0</span><span class="stat-l">km² Zirve</span></div>
+  </div>
+  <div class="scroll-hint"><span>Keşfet</span><div class="arrow"></div></div>
+</section>
+
+<!-- TIMELINE STRIP -->
+<div class="tstrip">
+  <div class="tstrip-inner">
+    <div class="tline"></div>
+    <div class="tnodes">
+      <div class="tnode lit"><div class="tdot"></div><div class="tyear">1299</div><div class="tname">Osman Gazi</div></div>
+      <div class="tnode lit"><div class="tdot"></div><div class="tyear">1389</div><div class="tname">Yıldırım Bayezid</div></div>
+      <div class="tnode lit"><div class="tdot"></div><div class="tyear">1421</div><div class="tname">II. Murat</div></div>
+      <div class="tnode lit"><div class="tdot"></div><div class="tyear">1451</div><div class="tname">Fatih S. Mehmet</div></div>
+      <div class="tnode lit"><div class="tdot"></div><div class="tyear">1512</div><div class="tname">Yavuz S. Selim</div></div>
+      <div class="tnode lit"><div class="tdot"></div><div class="tyear">1520</div><div class="tname">Kanuni S. Süleyman</div></div>
+      <div class="tnode"><div class="tdot"></div><div class="tyear">1922</div><div class="tname">Son Osmanlı</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SULTANLAR -->
+<section class="section" id="sultanlar">
+  <div class="sec-hd reveal">
+    <span class="sec-tag">Büyük Hükümdarlar</span>
+    <h2 class="sec-title">Öne Çıkan Sultanlar</h2>
+    <p class="sec-desc">Osmanlı Devleti'nin yükseliş döneminin mimarları — her biri kendi çağında tarihin akışını değiştirmiş büyük şahsiyetler.</p>
+    <div class="divider" style="margin-top:20px;margin-bottom:0"><span></span><em>✦</em><span></span></div>
+  </div>
+
+  <div class="grid" style="margin-top:48px;">
+
+    <!-- OSMAN GAZİ -->
+    <a href="osman-gazi.html" class="card reveal">
+      <div class="card-top" style="background:linear-gradient(135deg,#0d1a0d,#1a2e1a);">
+        <div class="card-icon">🏹</div><div class="card-grad"></div>
+        <div class="card-num">I. SULTAN</div>
+        <div class="card-era">Kurucu Hükümdar</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Osman Gazi</div>
+        <div class="card-epithet">Devlet-i Âliyye'nin Kurucusu</div>
+        <div class="card-desc">Söğüt'teki küçük bir beylikten dünya imparatorluğuna uzanan yolun ilk adımını atan, Osmanlı hanedanının kurucusu büyük hükümdar.</div>
+        <div class="card-tags"><span class="tag">Kuruluş 1299</span><span class="tag">Söğüt</span><span class="tag">Beylik</span></div>
+        <div class="card-ft"><span class="card-years">1299 — 1326</span><span class="card-cta">İncele</span></div>
+      </div>
+    </a>
+
+    <!-- YILDIRIM BAYEZİD -->
+    <a href="yildirim-bayezid.html" class="card reveal">
+      <div class="card-top" style="background:linear-gradient(135deg,#0d0d1a,#1a1a2e);">
+        <div class="card-icon">⚡</div><div class="card-grad"></div>
+        <div class="card-num">IV. SULTAN</div>
+        <div class="card-era">Yıldırım</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Yıldırım Bayezid</div>
+        <div class="card-epithet">Niğbolu Fatihi</div>
+        <div class="card-desc">Yıldırım lakabıyla tarihe geçen, Niğbolu Savaşı'nda Haçlı ordusunu dağıtan ve Anadolu'da Osmanlı birliğini pekiştiren kararlı sultan.</div>
+        <div class="card-tags"><span class="tag">Niğbolu 1396</span><span class="tag">Anadolu</span><span class="tag">Haçlı</span></div>
+        <div class="card-ft"><span class="card-years">1389 — 1402</span><span class="card-cta">İncele</span></div>
+      </div>
+    </a>
+
+    <!-- II. MURAT -->
+    <a href="ii-murat.html" class="card reveal">
+      <div class="card-top" style="background:linear-gradient(135deg,#1a100d,#2e1a0d);">
+        <div class="card-icon">⚔️</div><div class="card-grad"></div>
+        <div class="card-num">VI. SULTAN</div>
+        <div class="card-era">Devlet Yapıcı</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">II. Murat</div>
+        <div class="card-epithet">Varna ve Kosova Fatihi</div>
+        <div class="card-desc">Varna ve II. Kosova savaşlarıyla Osmanlı'nın Avrupa'daki geleceğini garantileyen, oğlu Fatih'i yetiştiren bilge sultan.</div>
+        <div class="card-tags"><span class="tag">Varna 1444</span><span class="tag">Edirne</span><span class="tag">İlim</span></div>
+        <div class="card-ft"><span class="card-years">1421 — 1451</span><span class="card-cta">İncele</span></div>
+      </div>
+    </a>
+
+    <!-- FATİH -->
+    <a href="fatih-sultan-mehmet.html" class="card featured reveal">
+      <div class="card-top" style="background:linear-gradient(135deg,#1a0d0d,#2e150d);">
+        <div class="card-icon" style="opacity:0.13;">🌙</div><div class="card-grad"></div>
+        <div class="card-num">VII. SULTAN</div>
+        <div class="card-era" style="color:var(--gold-light);">İstanbul Fatihi</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Fatih Sultan Mehmet</div>
+        <div class="card-epithet">Fatihu'l-Kostantiniyye</div>
+        <div class="card-desc">21 yaşında İstanbul'u fethederek bin yıllık Doğu Roma İmparatorluğu'na son veren ve yeni bir çağı başlatan efsanevi sultan.</div>
+        <div class="card-tags">
+          <span class="tag" style="border-color:rgba(212,168,67,0.4);color:var(--gold-dark);">İstanbul 1453</span>
+          <span class="tag">25 Sefer</span><span class="tag">Alim</span>
+        </div>
+        <div class="card-ft"><span class="card-years">1451 — 1481</span><span class="card-cta">İncele</span></div>
+      </div>
+    </a>
+
+    <!-- YAVUZ -->
+    <a href="yavuz-sultan-selim.html" class="card reveal">
+      <div class="card-top" style="background:linear-gradient(135deg,#1a0d0d,#1a0d1a);">
+        <div class="card-icon">🗡️</div><div class="card-grad"></div>
+        <div class="card-num">IX. SULTAN</div>
+        <div class="card-era">Yavuz</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Yavuz Sultan Selim</div>
+        <div class="card-epithet">Hâdimü'l-Harameyn</div>
+        <div class="card-desc">8 yılda imparatorluğu iki katına çıkaran, Mısır'ı ve Hicaz'ı fethederek halifeliği Osmanlı'ya kazandıran keskin zekâlı sultan.</div>
+        <div class="card-tags"><span class="tag">Çaldıran 1514</span><span class="tag">Mısır</span><span class="tag">Halifelik</span></div>
+        <div class="card-ft"><span class="card-years">1512 — 1520</span><span class="card-cta">İncele</span></div>
+      </div>
+    </a>
+
+    <!-- KANUNİ -->
+    <a href="kanuni-sultan-suleyman.html" class="card reveal">
+      <div class="card-top" style="background:linear-gradient(135deg,#0d1a14,#0d1a2e);">
+        <div class="card-icon">⚖️</div><div class="card-grad"></div>
+        <div class="card-num">X. SULTAN</div>
+        <div class="card-era">Kanuni</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Kanuni Sultan Süleyman</div>
+        <div class="card-epithet">Muhteşem Süleyman</div>
+        <div class="card-desc">Osmanlı'nın altın çağını yaşatan, 13 büyük sefer düzenleyen ve adaletli kanunlarıyla "Kanuni" unvanını kazanan en uzun saltanatlı sultan.</div>
+        <div class="card-tags"><span class="tag">Mohaç 1526</span><span class="tag">Viyana</span><span class="tag">Kanun</span></div>
+        <div class="card-ft"><span class="card-years">1520 — 1566</span><span class="card-cta">İncele</span></div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- DYNASTY STATS -->
+<div class="dyn" id="imparatorluk">
+  <div class="dyn-inner">
+    <div class="dyn-stat reveal">
+      <span class="dyn-icon">🌍</span>
+      <span class="dyn-n" data-count="5200000">0</span>
+      <span class="dyn-l">km² Zirve Alan</span>
+      <p class="dyn-d">Avrupa, Asya ve Afrika'yı kapsayan dev imparatorluk toprakları</p>
+    </div>
+    <div class="dyn-stat reveal">
+      <span class="dyn-icon">👑</span>
+      <span class="dyn-n" data-count="36">0</span>
+      <span class="dyn-l">Osmanlı Padişahı</span>
+      <p class="dyn-d">Osman Gazi'den Mehmed VI'ya — 36 hükümdar, 623 yıl</p>
+    </div>
+    <div class="dyn-stat reveal">
+      <span class="dyn-icon">🕌</span>
+      <span class="dyn-n" data-count="400">0</span>
+      <span class="dyn-l">Şehir İnşaat</span>
+      <p class="dyn-d">Cami, medrese, hastane ve kervansaray ile donatılan şehirler</p>
+    </div>
+  </div>
+</div>
+
+<!-- EXPANSION -->
+<section class="emp-sec" id="miras">
+  <div class="sec-hd reveal">
+    <span class="sec-tag">Toprak Genişlemesi</span>
+    <h2 class="sec-title">İmparatorluğun Büyümesi</h2>
+    <p class="sec-desc">Öne çıkan sultanlar döneminde gerçekleşen fetihler ve toprak genişlemesi.</p>
+    <div class="divider" style="margin-top:20px;margin-bottom:0"><span></span><em>✦</em><span></span></div>
+  </div>
+  <div class="emp-wrap reveal">
+    <div class="exp-item"><div class="exp-lbl">Osman Gazi<small>1299–1326</small></div><div><div class="exp-bar" style="width:0" data-width="8%"><span>~16.000 km²</span></div></div></div>
+    <div class="exp-item"><div class="exp-lbl">Yıldırım Bayezid<small>1389–1402</small></div><div><div class="exp-bar" style="width:0" data-width="28%"><span>~500.000 km²</span></div></div></div>
+    <div class="exp-item"><div class="exp-lbl">II. Murat<small>1421–1451</small></div><div><div class="exp-bar" style="width:0" data-width="40%"><span>~800.000 km²</span></div></div></div>
+    <div class="exp-item"><div class="exp-lbl">Fatih Sultan Mehmet<small>1451–1481</small></div><div><div class="exp-bar" style="width:0" data-width="55%"><span>~1.500.000 km²</span></div></div></div>
+    <div class="exp-item"><div class="exp-lbl">Yavuz Sultan Selim<small>1512–1520</small></div><div><div class="exp-bar" style="width:0" data-width="72%"><span>~3.400.000 km²</span></div></div></div>
+    <div class="exp-item"><div class="exp-lbl">Kanuni S. Süleyman<small>1520–1566</small></div><div><div class="exp-bar" style="width:0" data-width="100%"><span>~5.200.000 km² (Zirve)</span></div></div></div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-wrap">
+  <span class="qmark">"</span>
+  <p class="qtext">Ben yalnız Tanrı'nın bana emanet ettiği ülkelerin değil, bütün dünyanın imparatoruyum.</p>
+  <span class="qsrc">— Fatih Sultan Mehmet, 1453</span>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="ft-logo">☽ Osmanlı Sultanları</span>
+  <p class="ft-desc">Tarihin en uzun soluklu hanedanlarından birinin büyük hükümdarlarını keşfedin. Her sultan, her zafer, her miras — tek bir yerde.</p>
+  <div class="ft-bottom">© osmanlisultanlari.com — Tarihin Derinliklerinden</div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+
+  // Counter animation
+  function animCount(el) {
+    const t = parseInt(el.dataset.count), d = 2000, s = Date.now();
+    const tick = setInterval(() => {
+      const p = Math.min((Date.now()-s)/d, 1), e = 1-Math.pow(1-p,3), v = Math.floor(e*t);
+      el.textContent = t >= 1000000 ? (v/1000000).toFixed(1)+'M+' : v.toLocaleString('tr-TR');
+      if (p >= 1) { el.textContent = t >= 1000000 ? (t/1000000).toFixed(1)+'M+' : t.toLocaleString('tr-TR'); clearInterval(tick); }
+    }, 16);
+  }
+
+  // Intersection Observer
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('visible');
+      en.target.querySelectorAll('[data-count]').forEach(animCount);
+      en.target.querySelectorAll('.exp-bar[data-width]').forEach(b => setTimeout(() => b.style.width = b.dataset.width, 200));
+      obs.unobserve(en.target);
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Hero counters on load
+  setTimeout(() => document.querySelectorAll('.hero [data-count]').forEach(animCount), 600);
+</script>
+</body>
+</html>

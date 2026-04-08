@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osman Gazi — Osmanlı Devleti'nin Kurucusu</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:#d4a843; --gold-light:#f0c96a; --gold-dark:#8a6a1a;
+    --bg:#0c0b08; --bg2:#13110d; --bg3:#1c1810; --bg4:#241f14;
+    --text:#e8dcc8; --text-dim:#9a8a70;
+    --accent:#2d5a1b; --accent2:#4a8c30;
+    --border:rgba(212,168,67,0.2);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(12,11,8,0);border-bottom:1px solid transparent;transition:all 0.4s;}
+  nav.scrolled{background:rgba(12,11,8,0.96);border-bottom:1px solid var(--border);backdrop-filter:blur(10px);}
+  .nav-home{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:3px;color:var(--text-dim);text-decoration:none;text-transform:uppercase;transition:color 0.3s;}
+  .nav-home:hover{color:var(--gold);}
+  .nav-title{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:var(--gold);letter-spacing:2px;}
+  .nav-right{display:flex;gap:24px;align-items:center;}
+  .nav-link{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:2px;color:var(--text-dim);text-decoration:none;text-transform:uppercase;transition:color 0.3s;}
+  .nav-link:hover{color:var(--gold);}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 20px 60px;position:relative;
+    background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(45,90,27,0.14) 0%,transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% 70%,rgba(212,168,67,0.06) 0%,transparent 70%);}
+  .hero-icon{font-size:4rem;margin-bottom:20px;animation:floatY 4s ease-in-out infinite;}
+  @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .hero-num{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:6px;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;opacity:0.9;}
+  .hero-name{font-family:'Cinzel',serif;font-size:clamp(3rem,8vw,6rem);font-weight:900;line-height:1.05;
+    background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 40%,#b8832e 70%,var(--gold-light) 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px;}
+  .hero-epithet{font-family:'Cinzel',serif;font-size:clamp(0.85rem,2vw,1.2rem);color:var(--text-dim);letter-spacing:4px;text-transform:uppercase;margin-bottom:28px;}
+  .hero-desc{max-width:620px;font-size:0.95rem;color:var(--text-dim);line-height:1.9;margin-bottom:44px;}
+  .divider{display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:40px;}
+  .divider span{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dark));}
+  .divider span:last-child{background:linear-gradient(90deg,var(--gold-dark),transparent);}
+  .divider em{color:var(--gold);font-size:1.1rem;font-style:normal;}
+  .hero-stats{display:flex;gap:40px;flex-wrap:wrap;justify-content:center;}
+  .stat{text-align:center;}
+  .stat-n{font-family:'Cinzel',serif;font-size:1.9rem;font-weight:700;color:var(--gold);display:block;}
+  .stat-l{font-size:0.62rem;letter-spacing:3px;color:var(--text-dim);text-transform:uppercase;display:block;margin-top:4px;}
+
+  /* SECTIONS */
+  .section{padding:80px 40px;max-width:1100px;margin:0 auto;}
+  .sec-hd{text-align:center;margin-bottom:56px;}
+  .sec-tag{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:0.8;display:block;margin-bottom:12px;}
+  .sec-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--gold);}
+
+  /* BIOGRAPHY */
+  .bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+  .bio-text p{font-size:0.95rem;color:var(--text-dim);line-height:1.9;margin-bottom:18px;}
+  .bio-text p:last-child{margin-bottom:0;}
+  .bio-aside{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:28px;}
+  .bio-aside h3{font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+  .bio-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(212,168,67,0.08);}
+  .bio-row:last-child{border-bottom:none;}
+  .bio-key{font-family:'Cinzel',serif;font-size:0.72rem;color:var(--text-dim);letter-spacing:1px;}
+  .bio-val{font-size:0.82rem;color:var(--text);text-align:right;max-width:60%;}
+
+  /* ACHIEVEMENTS */
+  .ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+  .ach-card{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:24px;transition:all 0.3s;}
+  .ach-card:hover{border-color:var(--gold-dark);transform:translateY(-4px);}
+  .ach-icon{font-size:1.8rem;margin-bottom:12px;display:block;}
+  .ach-title{font-family:'Cinzel',serif;font-size:0.9rem;font-weight:600;color:var(--gold-light);margin-bottom:8px;}
+  .ach-desc{font-size:0.82rem;color:var(--text-dim);line-height:1.7;}
+
+  /* TIMELINE */
+  .timeline{position:relative;padding-left:28px;}
+  .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--gold-dark) 10%,var(--gold-dark) 90%,transparent);}
+  .tl-item{position:relative;margin-bottom:32px;padding-left:20px;}
+  .tl-item::before{content:'';position:absolute;left:-28px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--gold-dark);border:2px solid var(--bg);}
+  .tl-item.highlight::before{background:var(--gold);box-shadow:0 0 8px rgba(212,168,67,0.4);}
+  .tl-year{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:2px;color:var(--gold);margin-bottom:6px;}
+  .tl-title{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:var(--gold-light);margin-bottom:6px;}
+  .tl-desc{font-size:0.85rem;color:var(--text-dim);line-height:1.7;}
+
+  /* QUOTE */
+  .quote-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--gold-dark);border-radius:3px;padding:28px 32px;margin:40px 0;}
+  .quote-block p{font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.8;margin-bottom:10px;}
+  .quote-block cite{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;}
+
+  /* LEGACY */
+  .legacy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+  .legacy-item{background:var(--bg2);padding:32px 24px;text-align:center;}
+  .legacy-n{font-family:'Cinzel',serif;font-size:2rem;font-weight:700;color:var(--gold);display:block;margin-bottom:6px;}
+  .legacy-l{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;}
+  .legacy-d{font-size:0.78rem;color:var(--text-dim);margin-top:8px;line-height:1.6;}
+
+  /* NAV FOOTER */
+  .sultan-nav{background:var(--bg2);border-top:1px solid var(--border);padding:40px;display:flex;justify-content:space-between;align-items:center;}
+  .snav-link{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:2px;color:var(--text-dim);text-decoration:none;text-transform:uppercase;transition:color 0.3s;display:flex;align-items:center;gap:8px;}
+  .snav-link:hover{color:var(--gold);}
+  .snav-center{text-align:center;}
+  .snav-center a{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:3px;color:var(--gold-dark);text-decoration:none;text-transform:uppercase;}
+
+  footer{background:var(--bg);border-top:1px solid var(--border);padding:40px;text-align:center;}
+  .ft-logo{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:var(--gold);letter-spacing:3px;display:block;margin-bottom:12px;}
+  .ft-copy{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;}
+
+  .bg-sep{height:1px;background:linear-gradient(90deg,transparent,var(--border) 30%,var(--border) 70%,transparent);}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s,transform 0.7s;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  @media(max-width:768px){
+    nav{padding:14px 18px;}
+    .section{padding:56px 18px;}
+    .bio-grid{grid-template-columns:1fr;}
+    .legacy-grid{grid-template-columns:1fr;}
+    .sultan-nav{flex-direction:column;gap:20px;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-home">← Tüm Sultanlar</a>
+  <span class="nav-title">Osman Gazi</span>
+  <div class="nav-right">
+    <a href="yildirim-bayezid.html" class="nav-link">Sonraki →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-icon">🏹</div>
+  <div class="hero-num">I. Osmanlı Sultanı</div>
+  <h1 class="hero-name">Osman Gazi</h1>
+  <p class="hero-epithet">Devlet-i Âliyye'nin Kurucusu &nbsp;·&nbsp; 1258 — 1326</p>
+  <p class="hero-desc">Söğüt'teki küçük bir Türkmen beyliğinden yola çıkarak altı asır sürecek bir imparatorluğun temellerini atan, adını tüm hanedan ve devlete veren efsanevi hükümdar.</p>
+  <div class="divider"><span></span><em>✦</em><span></span></div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-n" data-count="27">0</span><span class="stat-l">Yıl Saltanat</span></div>
+    <div class="stat"><span class="stat-n" data-count="16000">0</span><span class="stat-l">km² Toprak</span></div>
+    <div class="stat"><span class="stat-n" data-count="1299">0</span><span class="stat-l">Kuruluş Yılı</span></div>
+    <div class="stat"><span class="stat-n" data-count="36">0</span><span class="stat-l">Halef Sultan</span></div>
+  </div>
+</section>
+
+<div class="bg-sep"></div>
+
+<!-- BİOGRAFİ -->
+<section class="section reveal">
+  <div class="sec-hd">
+    <span class="sec-tag">Hayatı ve Mirası</span>
+    <h2 class="sec-title">Kim Osman Gazi?</h2>
+  </div>
+  <div class="bio-grid">
+    <div class="bio-text">
+      <p>Osman Gazi, yaklaşık 1258 yılında Söğüt'te dünyaya geldi. Babası Ertuğrul Gazi'nin ölümünün ardından, 1281 yılında Kayı boyunun liderliğini üstlendi. Küçük bir Türkmen aşireti olarak Anadolu'nun kuzeybatısına yerleşen Kayı boyu, Bizans sınırına yakın stratejik konumuyla büyüme potansiyeli taşıyordu.</p>
+      <p>1299 yılında, Selçuklu Sultanı'nın zayıflamasıyla birlikte Osman Bey bağımsızlığını ilan etti. Bu tarih, Osmanlı Devleti'nin kuruluşu olarak kabul edilmektedir. Osman Gazi, yalnızca askeri güçle değil; adalet, hoşgörü ve ittifak politikalarıyla da çevresindeki Hristiyan ve Müslüman toplulukların saygısını kazandı.</p>
+      <p>Bursa'yı kuşatma altına almayı başardı; ancak şehrin düşüşünü göremeden 1326'da hayatını kaybetti. Bursa, oğlu Orhan Gazi tarafından fethedildi ve Osmanlı'nın ilk başkenti oldu. Osman Gazi, Bursa yakınlarındaki türbesinde hâlâ ziyaret edilmektedir.</p>
+    </div>
+    <div class="bio-aside">
+      <h3>Hızlı Bilgi</h3>
+      <div class="bio-row"><span class="bio-key">Doğum</span><span class="bio-val">~1258, Söğüt</span></div>
+      <div class="bio-row"><span class="bio-key">Ölüm</span><span class="bio-val">1326, Söğüt</span></div>
+      <div class="bio-row"><span class="bio-key">Saltanat</span><span class="bio-val">1299 – 1326 (27 yıl)</span></div>
+      <div class="bio-row"><span class="bio-key">Hanedanı</span><span class="bio-val">Osmanlı / Kayı Boyu</span></div>
+      <div class="bio-row"><span class="bio-key">Babası</span><span class="bio-val">Ertuğrul Gazi</span></div>
+      <div class="bio-row"><span class="bio-key">Annesi</span><span class="bio-val">Halime Hatun</span></div>
+      <div class="bio-row"><span class="bio-key">Eşleri</span><span class="bio-val">Rabia Bala Hatun, Malhun Hatun</span></div>
+      <div class="bio-row"><span class="bio-key">Halefi</span><span class="bio-val">Orhan Gazi</span></div>
+      <div class="bio-row"><span class="bio-key">Unvanı</span><span class="bio-val">Gazi, Padişah</span></div>
+      <div class="bio-row"><span class="bio-key">Mezarı</span><span class="bio-val">Bursa, Türkiye</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BAŞARILAR -->
+<section class="section" style="padding-top:0;">
+  <div class="sec-hd reveal">
+    <span class="sec-tag">Önemli Başarılar</span>
+    <h2 class="sec-title">Osman Gazi'nin Eserleri</h2>
+  </div>
+  <div class="ach-grid">
+    <div class="ach-card reveal">
+      <span class="ach-icon">🏛️</span>
+      <div class="ach-title">Devletin Kuruluşu</div>
+      <p class="ach-desc">1299'da bağımsızlığını ilan ederek 623 yıl sürecek Osmanlı Devleti'nin temellerini attı. Hanedana adını verdi.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">⚔️</span>
+      <div class="ach-title">Koyunhisar Zaferi (1301)</div>
+      <p class="ach-desc">Bizans kuvvetlerine karşı kazanılan bu zafer, Osmanlıların ilk büyük askeri başarısı ve bölgedeki güçlerinin ispatıdır.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">🤝</span>
+      <div class="ach-title">Akıllı İttifak Politikası</div>
+      <p class="ach-desc">Şeyh Edebali ile evlilik bağı kurarak, dini ve siyasi meşruiyet kazandı. Çevresindeki beyleri ve toplulukları bünyesine kattı.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">⚖️</span>
+      <div class="ach-title">Adalet ve Hoşgörü</div>
+      <p class="ach-desc">Hristiyan ve Müslüman toplulukları adil yönetimiyle bir arada tuttu. "Osman Gazinin adaleti" efsanevi bir statü kazandı.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">🏙️</span>
+      <div class="ach-title">Bursa Kuşatması</div>
+      <p class="ach-desc">Bizans'ın önemli şehri Bursa'yı yıllarca kuşatma altında tuttu; şehir oğlu Orhan döneminde fethedildi ve ilk başkent oldu.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">📜</span>
+      <div class="ach-title">Devlet Kurumları</div>
+      <p class="ach-desc">Ordu teşkilatını düzenledi, divan sisteminin temellerini attı ve fethedilen toprakları idari olarak organize etti.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section" style="padding-top:0;padding-bottom:0;">
+  <div class="quote-block reveal">
+    <p>Devlet kurmak kolaydır; asıl zor olan, onu sürdürmektir. Ben oğullarıma bir devlet değil, adalet bırakıyorum.</p>
+    <cite>— Osman Gazi'ye atfedilen söz</cite>
+  </div>
+</section>
+
+<!-- TARİHSEL SÜREÇ -->
+<section class="section reveal">
+  <div class="sec-hd">
+    <span class="sec-tag">Kronoloji</span>
+    <h2 class="sec-title">Önemli Tarihler</h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">~1258</div>
+      <div class="tl-title">Dünyaya Gelişi</div>
+      <p class="tl-desc">Ertuğrul Gazi ve Halime Hatun'un oğlu olarak Söğüt'te dünyaya geldi. Adı "kemik" anlamına gelen "Osmancık" lakabıyla da anıldı.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">~1281</div>
+      <div class="tl-title">Beylik Liderliği</div>
+      <p class="tl-desc">Babası Ertuğrul Gazi'nin vefatının ardından Kayı boyunun başına geçti. Şeyh Edebali'nin kızı Rabia Bala Hatun ile evlendi.</p>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-year">1299</div>
+      <div class="tl-title">Osmanlı Devleti'nin Kuruluşu</div>
+      <p class="tl-desc">Selçuklu otoritesinin çökmesiyle bağımsızlığını ilan etti. Bu tarih, Osmanlı Devleti'nin resmi kuruluş yılı olarak kabul edilmektedir.</p>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-year">1301</div>
+      <div class="tl-title">Koyunhisar (Bapheus) Zaferi</div>
+      <p class="tl-desc">İznik yakınlarında Bizans kuvvetlerine karşı kazanılan bu zafer, Osmanlının uluslararası arenada tanınan ilk büyük askeri başarısıdır.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1302–1320</div>
+      <div class="tl-title">Genişleme Seferleri</div>
+      <p class="tl-desc">Yenişehir, İnegöl, Bilecik ve çevre kaleleri birer birer ele geçirdi. Osmanlı toprakları hızla büyüdü.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1317</div>
+      <div class="tl-title">Bursa Kuşatması Başladı</div>
+      <p class="tl-desc">Bizans İmparatorluğu'nun Anadolu'daki önemli şehri Bursa, uzun soluklu bir kuşatmayla abluka altına alındı.</p>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-year">1326</div>
+      <div class="tl-title">Vefatı</div>
+      <p class="tl-desc">Hayatını kaybetmeden kısa süre önce Bursa fethedildi. Osman Gazi, Bursa'da oğlu Orhan tarafından defnedildi. 36 sultan onun halefi oldu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MİRAS -->
+<div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="legacy-grid">
+      <div class="legacy-item reveal">
+        <span class="legacy-n" data-count="623">0</span>
+        <span class="legacy-l">Yıllık Miras</span>
+        <p class="legacy-d">Kurduğu devlet 1299'dan 1922'ye kadar yaşadı</p>
+      </div>
+      <div class="legacy-item reveal">
+        <span class="legacy-n" data-count="36">0</span>
+        <span class="legacy-l">Halef Sultan</span>
+        <p class="legacy-d">Osmanlı Hanedanı'nın tüm padişahları onun soyundandır</p>
+      </div>
+      <div class="legacy-item reveal">
+        <span class="legacy-n" data-count="3">0</span>
+        <span class="legacy-l">Kıta</span>
+        <p class="legacy-d">Başlattığı devlet üç kıtada hüküm sürdü</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SULTAN NAV -->
+<div class="sultan-nav">
+  <a href="index.html" class="snav-link">← Tüm Sultanlar</a>
+  <div class="snav-center">
+    <a href="index.html">osmanlisultanlari.com</a>
+  </div>
+  <a href="yildirim-bayezid.html" class="snav-link">Yıldırım Bayezid →</a>
+</div>
+
+<footer>
+  <span class="ft-logo">☽ Osmanlı Sultanları</span>
+  <div class="ft-copy">© osmanlisultanlari.com — Tarihin Derinliklerinden</div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+  function animCount(el) {
+    const t=parseInt(el.dataset.count),d=1800,s=Date.now();
+    const tick=setInterval(()=>{
+      const p=Math.min((Date.now()-s)/d,1),e=1-Math.pow(1-p,3),v=Math.floor(e*t);
+      el.textContent=v.toLocaleString('tr-TR');
+      if(p>=1){el.textContent=t.toLocaleString('tr-TR');clearInterval(tick);}
+    },16);
+  }
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(!en.isIntersecting)return;
+      en.target.classList.add('visible');
+      en.target.querySelectorAll('[data-count]').forEach(animCount);
+      obs.unobserve(en.target);
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.hero [data-count]').forEach(animCount),600);
+</script>
+</body>
+</html>

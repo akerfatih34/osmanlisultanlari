@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>II. Murat — Varna ve Kosova Fatihi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#d4a843;--gold-light:#f0c96a;--gold-dark:#8a6a1a;--bg:#0c0b08;--bg2:#13110d;--bg3:#1c1810;--text:#e8dcc8;--text-dim:#9a8a70;--accent:#2a1a0d;--accent2:#c87941;--border:rgba(212,168,67,0.2);}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--text);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(12,11,8,0);border-bottom:1px solid transparent;transition:all 0.4s;}
+  nav.scrolled{background:rgba(12,11,8,0.96);border-bottom:1px solid var(--border);backdrop-filter:blur(10px);}
+  .nav-home{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:3px;color:var(--text-dim);text-decoration:none;text-transform:uppercase;transition:color 0.3s;}
+  .nav-home:hover{color:var(--gold);}
+  .nav-title{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:var(--gold);letter-spacing:2px;}
+  .nav-link{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:2px;color:var(--text-dim);text-decoration:none;text-transform:uppercase;transition:color 0.3s;}
+  .nav-link:hover{color:var(--gold);}
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 20px 60px;position:relative;
+    background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(42,26,13,0.2) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 50% 70%,rgba(212,168,67,0.06) 0%,transparent 70%);}
+  .hero-icon{font-size:4rem;margin-bottom:20px;animation:floatY 4s ease-in-out infinite;}
+  @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .hero-num{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:6px;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+  .hero-name{font-family:'Cinzel',serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;line-height:1.05;background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 40%,#b8832e 70%,var(--gold-light) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px;}
+  .hero-epithet{font-family:'Cinzel',serif;font-size:clamp(0.8rem,1.8vw,1.1rem);color:var(--text-dim);letter-spacing:4px;text-transform:uppercase;margin-bottom:28px;}
+  .hero-desc{max-width:620px;font-size:0.95rem;color:var(--text-dim);line-height:1.9;margin-bottom:44px;}
+  .divider{display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:40px;}
+  .divider span{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dark));}
+  .divider span:last-child{background:linear-gradient(90deg,var(--gold-dark),transparent);}
+  .divider em{color:var(--gold);font-size:1.1rem;font-style:normal;}
+  .hero-stats{display:flex;gap:40px;flex-wrap:wrap;justify-content:center;}
+  .stat{text-align:center;}
+  .stat-n{font-family:'Cinzel',serif;font-size:1.9rem;font-weight:700;color:var(--gold);display:block;}
+  .stat-l{font-size:0.62rem;letter-spacing:3px;color:var(--text-dim);text-transform:uppercase;display:block;margin-top:4px;}
+  .section{padding:80px 40px;max-width:1100px;margin:0 auto;}
+  .sec-hd{text-align:center;margin-bottom:52px;}
+  .sec-tag{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:0.8;display:block;margin-bottom:12px;}
+  .sec-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--gold);}
+  .bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+  .bio-text p{font-size:0.93rem;color:var(--text-dim);line-height:1.9;margin-bottom:18px;}
+  .bio-aside{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:28px;}
+  .bio-aside h3{font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+  .bio-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(212,168,67,0.08);}
+  .bio-row:last-child{border-bottom:none;}
+  .bio-key{font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-dim);letter-spacing:1px;}
+  .bio-val{font-size:0.8rem;color:var(--text);text-align:right;max-width:58%;}
+  .ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+  .ach-card{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:24px;transition:all 0.3s;}
+  .ach-card:hover{border-color:var(--gold-dark);transform:translateY(-4px);}
+  .ach-icon{font-size:1.8rem;margin-bottom:12px;display:block;}
+  .ach-title{font-family:'Cinzel',serif;font-size:0.9rem;font-weight:600;color:var(--gold-light);margin-bottom:8px;}
+  .ach-desc{font-size:0.82rem;color:var(--text-dim);line-height:1.7;}
+  .timeline{position:relative;padding-left:28px;}
+  .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--gold-dark) 10%,var(--gold-dark) 90%,transparent);}
+  .tl-item{position:relative;margin-bottom:32px;padding-left:20px;}
+  .tl-item::before{content:'';position:absolute;left:-28px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--gold-dark);border:2px solid var(--bg);}
+  .tl-item.highlight::before{background:var(--gold);box-shadow:0 0 8px rgba(212,168,67,0.4);}
+  .tl-year{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:2px;color:var(--gold);margin-bottom:6px;}
+  .tl-title{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:var(--gold-light);margin-bottom:6px;}
+  .tl-desc{font-size:0.85rem;color:var(--text-dim);line-height:1.7;}
+  .quote-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--gold-dark);border-radius:3px;padding:28px 32px;margin:40px 0;}
+  .quote-block p{font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.8;margin-bottom:10px;}
+  .quote-block cite{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;}
+  .legacy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+  .legacy-item{background:var(--bg2);padding:32px 24px;text-align:center;}
+  .legacy-n{font-family:'Cinzel',serif;font-size:2rem;font-weight:700;color:var(--gold);display:block;margin-bottom:6px;}
+  .legacy-l{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;}
+  .legacy-d{font-size:0.78rem;color:var(--text-dim);margin-top:8px;line-height:1.6;}
+  .sultan-nav{background:var(--bg2);border-top:1px solid var(--border);padding:40px;display:flex;justify-content:space-between;align-items:center;}
+  .snav-link{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:2px;color:var(--text-dim);text-decoration:none;text-transform:uppercase;transition:color 0.3s;}
+  .snav-link:hover{color:var(--gold);}
+  .snav-center a{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:3px;color:var(--gold-dark);text-decoration:none;text-transform:uppercase;}
+  footer{background:var(--bg);border-top:1px solid var(--border);padding:40px;text-align:center;}
+  .ft-logo{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:var(--gold);letter-spacing:3px;display:block;margin-bottom:12px;}
+  .ft-copy{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;}
+  .bg-sep{height:1px;background:linear-gradient(90deg,transparent,var(--border) 30%,var(--border) 70%,transparent);}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s,transform 0.7s;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:768px){nav{padding:14px 18px;}.section{padding:56px 18px;}.bio-grid{grid-template-columns:1fr;}.legacy-grid{grid-template-columns:1fr;}.sultan-nav{flex-direction:column;gap:20px;text-align:center;}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nav-home">← Tüm Sultanlar</a>
+  <span class="nav-title">II. Murat</span>
+  <div style="display:flex;gap:16px;">
+    <a href="yildirim-bayezid.html" class="nav-link">← Önceki</a>
+    <a href="fatih-sultan-mehmet.html" class="nav-link">Sonraki →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-icon">⚔️</div>
+  <div class="hero-num">VI. Osmanlı Sultanı</div>
+  <h1 class="hero-name">II. Murat</h1>
+  <p class="hero-epithet">Varna ve Kosova Fatihi &nbsp;·&nbsp; 1404 — 1451</p>
+  <p class="hero-desc">Osmanlı'nın bir kriz döneminden güçlenerek çıkmasını sağlayan, Avrupa'daki son büyük Haçlı girişimlerini kıran ve oğlu Fatih'i yetiştiren bilge hükümdar.</p>
+  <div class="divider"><span></span><em>✦</em><span></span></div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-n" data-count="30">0</span><span class="stat-l">Yıl Saltanat</span></div>
+    <div class="stat"><span class="stat-n" data-count="1444">0</span><span class="stat-l">Varna Zaferi</span></div>
+    <div class="stat"><span class="stat-n" data-count="800000">0</span><span class="stat-l">km² Toprak</span></div>
+    <div class="stat"><span class="stat-n" data-count="20">0</span><span class="stat-l">Önemli Sefer</span></div>
+  </div>
+</section>
+
+<div class="bg-sep"></div>
+
+<section class="section reveal">
+  <div class="sec-hd">
+    <span class="sec-tag">Hayatı ve Saltanatı</span>
+    <h2 class="sec-title">Kim II. Murat?</h2>
+  </div>
+  <div class="bio-grid">
+    <div class="bio-text">
+      <p>II. Murat, 1404'te Amasya'da dünyaya geldi. Fetret Devri'nin ardından yeniden toparlanmaya çalışan Osmanlı'da tahta çıktığında henüz 18 yaşındaydı. Saltanatının ilk yıllarında iç isyanlar ve Bizans'ın kışkırtmalarıyla mücadele etti.</p>
+      <p>1440'lı yıllarda Osmanlı'ya karşı papanın öncülüğünde büyük bir Haçlı harekâtı organize edildi. II. Murat, 1444'te Varna Savaşı'nda Polonya-Macar birleşik kuvvetlerini ezici bir yenilgiye uğrattı. 1446'da II. Kosova Savaşı'nda Hunyadi János komutasındaki Haçlı ordusunu bir kez daha perişan etti.</p>
+      <p>II. Murat aynı zamanda kültür ve ilim hamisi olarak da öne çıktı. Edirne'yi güzelleştirdi, pek çok medrese ve cami inşa ettirdi. Oğlu Şehzade Mehmed'e (ileride Fatih Sultan Mehmet) en iyi eğitimi aldırmasıyla, tohumlarını ektiği İstanbul'un fethini ise göremedi.</p>
+    </div>
+    <div class="bio-aside">
+      <h3>Hızlı Bilgi</h3>
+      <div class="bio-row"><span class="bio-key">Doğum</span><span class="bio-val">16 Haziran 1404, Amasya</span></div>
+      <div class="bio-row"><span class="bio-key">Ölüm</span><span class="bio-val">3 Şubat 1451, Edirne</span></div>
+      <div class="bio-row"><span class="bio-key">Saltanat</span><span class="bio-val">1421–1444 ve 1446–1451</span></div>
+      <div class="bio-row"><span class="bio-key">Babası</span><span class="bio-val">I. Mehmet Çelebi</span></div>
+      <div class="bio-row"><span class="bio-key">Annesi</span><span class="bio-val">Emine Hatun</span></div>
+      <div class="bio-row"><span class="bio-key">Başkent</span><span class="bio-val">Edirne</span></div>
+      <div class="bio-row"><span class="bio-key">Önemli Zafer</span><span class="bio-val">Varna 1444, II. Kosova 1448</span></div>
+      <div class="bio-row"><span class="bio-key">Oğulları</span><span class="bio-val">Fatih Sultan Mehmet (VII. Sultan)</span></div>
+      <div class="bio-row"><span class="bio-key">Lakabı</span><span class="bio-val">Koca Murat, İkinci Murat</span></div>
+      <div class="bio-row"><span class="bio-key">Mezarı</span><span class="bio-val">Bursa, Türkiye</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="sec-hd reveal">
+    <span class="sec-tag">Önemli Başarılar</span>
+    <h2 class="sec-title">II. Murat'ın Eserleri</h2>
+  </div>
+  <div class="ach-grid">
+    <div class="ach-card reveal">
+      <span class="ach-icon">🏆</span>
+      <div class="ach-title">Varna Zaferi (1444)</div>
+      <p class="ach-desc">Polonya-Macar birleşik Haçlı kuvvetlerini Varna'da büyük bir zaferle bozguna uğrattı. Kral Vladislav savaş meydanında hayatını kaybetti.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">⚔️</span>
+      <div class="ach-title">II. Kosova Zaferi (1448)</div>
+      <p class="ach-desc">Hunyadi János komutasındaki Haçlı kuvvetlerini Kosova ovasında ağır bir yenilgiye uğrattı. Osmanlı'nın Balkanlar'daki hâkimiyeti pekişti.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">🎓</span>
+      <div class="ach-title">İlim ve Sanat Hamisi</div>
+      <p class="ach-desc">Edirne'yi kültür merkezi yaptı. Şairler, alimler ve sanatçıları sarayına topladı. "Muradiyye" külliyesini inşa ettirdi.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">🏛️</span>
+      <div class="ach-title">Üç Şerefeli Cami</div>
+      <p class="ach-desc">Edirne'de inşa ettirdiği Üç Şerefeli Cami, Osmanlı mimarisinde devrim yarattı ve Mimar Sinan'ın yapılarına ilham oldu.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">👑</span>
+      <div class="ach-title">İki Kez Tahta Çıkma</div>
+      <p class="ach-desc">1444'te oğlu Mehmed lehine tahtı bıraktı, ancak Haçlı seferi tehdidi üzerine geri döndü. Bu eşsiz bir tarihsel örnektir.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">🌱</span>
+      <div class="ach-title">Fatih'i Yetiştirdi</div>
+      <p class="ach-desc">Oğlu Şehzade Mehmed'e İstanbul'u fethetme idealini aşıladı, en iyi hocaları atadı ve onu büyük bir sultan olarak yetiştirdi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;padding-bottom:0;">
+  <div class="quote-block reveal">
+    <p>Ben bu dünyada büyük işler başardım; asıl büyük iş oğluma kaldı — Konstantinopolis'in kapıları onun önünde açılacak.</p>
+    <cite>— II. Murat'a atfedilen söz</cite>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="sec-hd">
+    <span class="sec-tag">Kronoloji</span>
+    <h2 class="sec-title">Önemli Tarihler</h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">1404</div>
+      <div class="tl-title">Dünyaya Gelişi</div>
+      <p class="tl-desc">I. Mehmet Çelebi'nin oğlu olarak Amasya'da dünyaya geldi. Fetret Devri'nin sona erdiği dönemde büyüdü.</p>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-year">1421</div>
+      <div class="tl-title">Tahta Çıkışı</div>
+      <p class="tl-desc">18 yaşında Osmanlı tahtına çıktı. İlk yıllarında Bizans'ın kışkırtmasıyla çıkan Mustafa Çelebi isyanını bastırdı.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1422</div>
+      <div class="tl-title">Konstantinopolis Kuşatması</div>
+      <p class="tl-desc">İstanbul'u kuşattı; ancak Anadolu'daki iç isyanlar yüzünden kuşatmayı kaldırmak zorunda kaldı.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1430</div>
+      <div class="tl-title">Selanik'in Fethi</div>
+      <p class="tl-desc">Bizans'ın Ege'deki önemli şehri Selanik'i fethederek Osmanlı'ya kattı.</p>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-year">1444</div>
+      <div class="tl-title">Varna Zaferi</div>
+      <p class="tl-desc">Batı Avrupa'nın son büyük Haçlı seferini Varna'da paramparça etti. Kısa süreliğine tahtı Şehzade Mehmed'e bıraktı.</p>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-year">1448</div>
+      <div class="tl-title">II. Kosova Zaferi</div>
+      <p class="tl-desc">Hunyadi János komutasındaki Haçlı kuvvetlerini Kosova ovasında ezdi. Osmanlı'nın Balkan hâkimiyeti kalıcı hale geldi.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1451</div>
+      <div class="tl-title">Vefatı ve Fatih'in Tahta Çıkışı</div>
+      <p class="tl-desc">Edirne'de vefat etti. Oğlu Şehzade Mehmed, II. Mehmet (Fatih) olarak tahta çıktı ve iki yıl sonra İstanbul'u fethetti.</p>
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="legacy-grid">
+      <div class="legacy-item reveal">
+        <span class="legacy-n" data-count="30">0</span>
+        <span class="legacy-l">Yıl Saltanat</span>
+        <p class="legacy-d">İki dönem boyunca Osmanlı'ya hizmet etti</p>
+      </div>
+      <div class="legacy-item reveal">
+        <span class="legacy-n" data-count="2">0</span>
+        <span class="legacy-l">Büyük Haçlı Zaferi</span>
+        <p class="legacy-d">Varna ve Kosova'da Haçlı ordularını yenilgiye uğrattı</p>
+      </div>
+      <div class="legacy-item reveal">
+        <span class="legacy-n" data-count="1453">0</span>
+        <span class="legacy-l">Oğlunun Zaferi</span>
+        <p class="legacy-d">Fatih Sultan Mehmet İstanbul'u fethetti</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sultan-nav">
+  <a href="yildirim-bayezid.html" class="snav-link">← Yıldırım Bayezid</a>
+  <div class="snav-center"><a href="index.html">osmanlisultanlari.com</a></div>
+  <a href="fatih-sultan-mehmet.html" class="snav-link">Fatih Sultan Mehmet →</a>
+</div>
+
+<footer>
+  <span class="ft-logo">☽ Osmanlı Sultanları</span>
+  <div class="ft-copy">© osmanlisultanlari.com — Tarihin Derinliklerinden</div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+  function animCount(el){const t=parseInt(el.dataset.count),d=1800,s=Date.now();const tick=setInterval(()=>{const p=Math.min((Date.now()-s)/d,1),e=1-Math.pow(1-p,3),v=Math.floor(e*t);el.textContent=t>=100000?(v/1000).toFixed(0)+'B+':v.toLocaleString('tr-TR');if(p>=1){el.textContent=t>=100000?(t/1000).toFixed(0)+'B+':t.toLocaleString('tr-TR');clearInterval(tick);}},16);}
+  const obs=new IntersectionObserver(entries=>{entries.forEach(en=>{if(!en.isIntersecting)return;en.target.classList.add('visible');en.target.querySelectorAll('[data-count]').forEach(animCount);obs.unobserve(en.target);});},{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.hero [data-count]').forEach(animCount),600);
+</script>
+</body>
+</html>

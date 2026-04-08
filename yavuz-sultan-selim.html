@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yavuz Sultan Selim — Hâdimü'l-Harameyn</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#d4a843;--gold-light:#f0c96a;--gold-dark:#8a6a1a;--bg:#0c0b08;--bg2:#13110d;--bg3:#1c1810;--text:#e8dcc8;--text-dim:#9a8a70;--red:#8b1a1a;--accent:#3a1a1a;--accent2:#cc3333;--border:rgba(212,168,67,0.2);}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--text);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(12,11,8,0);border-bottom:1px solid transparent;transition:all 0.4s;}
+  nav.scrolled{background:rgba(12,11,8,0.96);border-bottom:1px solid var(--border);backdrop-filter:blur(10px);}
+  .nav-home{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:3px;color:var(--text-dim);text-decoration:none;text-transform:uppercase;transition:color 0.3s;}
+  .nav-home:hover{color:var(--gold);}
+  .nav-title{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:var(--gold);letter-spacing:2px;}
+  .nav-link{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:2px;color:var(--text-dim);text-decoration:none;text-transform:uppercase;transition:color 0.3s;}
+  .nav-link:hover{color:var(--gold);}
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 20px 60px;position:relative;
+    background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(139,26,26,0.15) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 50% 70%,rgba(212,168,67,0.06) 0%,transparent 70%);}
+  .hero-icon{font-size:4rem;margin-bottom:20px;animation:floatY 4s ease-in-out infinite;}
+  @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .hero-num{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:6px;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+  .hero-name{font-family:'Cinzel',serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;line-height:1.05;background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 40%,#b8832e 70%,var(--gold-light) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px;}
+  .hero-epithet{font-family:'Cinzel',serif;font-size:clamp(0.8rem,1.8vw,1.1rem);color:var(--text-dim);letter-spacing:4px;text-transform:uppercase;margin-bottom:28px;}
+  .hero-desc{max-width:620px;font-size:0.95rem;color:var(--text-dim);line-height:1.9;margin-bottom:44px;}
+  .divider{display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:40px;}
+  .divider span{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dark));}
+  .divider span:last-child{background:linear-gradient(90deg,var(--gold-dark),transparent);}
+  .divider em{color:var(--gold);font-size:1.1rem;font-style:normal;}
+  .hero-stats{display:flex;gap:40px;flex-wrap:wrap;justify-content:center;}
+  .stat{text-align:center;}
+  .stat-n{font-family:'Cinzel',serif;font-size:1.9rem;font-weight:700;color:var(--gold);display:block;}
+  .stat-l{font-size:0.62rem;letter-spacing:3px;color:var(--text-dim);text-transform:uppercase;display:block;margin-top:4px;}
+  .section{padding:80px 40px;max-width:1100px;margin:0 auto;}
+  .sec-hd{text-align:center;margin-bottom:52px;}
+  .sec-tag{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:0.8;display:block;margin-bottom:12px;}
+  .sec-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--gold);}
+  .bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+  .bio-text p{font-size:0.93rem;color:var(--text-dim);line-height:1.9;margin-bottom:18px;}
+  .bio-aside{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:28px;}
+  .bio-aside h3{font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+  .bio-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(212,168,67,0.08);}
+  .bio-row:last-child{border-bottom:none;}
+  .bio-key{font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-dim);letter-spacing:1px;}
+  .bio-val{font-size:0.8rem;color:var(--text);text-align:right;max-width:58%;}
+  .ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+  .ach-card{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:24px;transition:all 0.3s;}
+  .ach-card:hover{border-color:var(--gold-dark);transform:translateY(-4px);}
+  .ach-icon{font-size:1.8rem;margin-bottom:12px;display:block;}
+  .ach-title{font-family:'Cinzel',serif;font-size:0.9rem;font-weight:600;color:var(--gold-light);margin-bottom:8px;}
+  .ach-desc{font-size:0.82rem;color:var(--text-dim);line-height:1.7;}
+  .timeline{position:relative;padding-left:28px;}
+  .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--gold-dark) 10%,var(--gold-dark) 90%,transparent);}
+  .tl-item{position:relative;margin-bottom:32px;padding-left:20px;}
+  .tl-item::before{content:'';position:absolute;left:-28px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--gold-dark);border:2px solid var(--bg);}
+  .tl-item.highlight::before{background:var(--gold);box-shadow:0 0 8px rgba(212,168,67,0.4);}
+  .tl-year{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:2px;color:var(--gold);margin-bottom:6px;}
+  .tl-title{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:var(--gold-light);margin-bottom:6px;}
+  .tl-desc{font-size:0.85rem;color:var(--text-dim);line-height:1.7;}
+  .quote-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:3px;padding:28px 32px;margin:40px 0;}
+  .quote-block p{font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.8;margin-bottom:10px;}
+  .quote-block cite{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;}
+  .legacy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+  .legacy-item{background:var(--bg2);padding:32px 24px;text-align:center;}
+  .legacy-n{font-family:'Cinzel',serif;font-size:2rem;font-weight:700;color:var(--gold);display:block;margin-bottom:6px;}
+  .legacy-l{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;}
+  .legacy-d{font-size:0.78rem;color:var(--text-dim);margin-top:8px;line-height:1.6;}
+  .sultan-nav{background:var(--bg2);border-top:1px solid var(--border);padding:40px;display:flex;justify-content:space-between;align-items:center;}
+  .snav-link{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:2px;color:var(--text-dim);text-decoration:none;text-transform:uppercase;transition:color 0.3s;}
+  .snav-link:hover{color:var(--gold);}
+  .snav-center a{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:3px;color:var(--gold-dark);text-decoration:none;text-transform:uppercase;}
+  footer{background:var(--bg);border-top:1px solid var(--border);padding:40px;text-align:center;}
+  .ft-logo{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:var(--gold);letter-spacing:3px;display:block;margin-bottom:12px;}
+  .ft-copy{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;}
+  .bg-sep{height:1px;background:linear-gradient(90deg,transparent,var(--border) 30%,var(--border) 70%,transparent);}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s,transform 0.7s;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:768px){nav{padding:14px 18px;}.section{padding:56px 18px;}.bio-grid{grid-template-columns:1fr;}.legacy-grid{grid-template-columns:1fr;}.sultan-nav{flex-direction:column;gap:20px;text-align:center;}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nav-home">← Tüm Sultanlar</a>
+  <span class="nav-title">Yavuz Sultan Selim</span>
+  <div style="display:flex;gap:16px;">
+    <a href="fatih-sultan-mehmet.html" class="nav-link">← Önceki</a>
+    <a href="kanuni-sultan-suleyman.html" class="nav-link">Sonraki →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-icon">🗡️</div>
+  <div class="hero-num">IX. Osmanlı Sultanı</div>
+  <h1 class="hero-name">Yavuz Sultan Selim</h1>
+  <p class="hero-epithet">Hâdimü'l-Harameyn &nbsp;·&nbsp; 1470 — 1520</p>
+  <p class="hero-desc">Yalnızca 8 yılda imparatorluk topraklarını iki katına çıkaran, Mısır ve Hicaz'ı fethederek İslam dünyasının liderliğini Osmanlı'ya kazandıran "Yavuz" lakaplı efsanevi sultan.</p>
+  <div class="divider"><span></span><em>✦</em><span></span></div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-n" data-count="8">0</span><span class="stat-l">Yıl Saltanat</span></div>
+    <div class="stat"><span class="stat-n" data-count="3400000">0</span><span class="stat-l">km² Toprak</span></div>
+    <div class="stat"><span class="stat-n" data-count="12">0</span><span class="stat-l">Büyük Sefer</span></div>
+    <div class="stat"><span class="stat-n" data-count="1517">0</span><span class="stat-l">Halifelik Yılı</span></div>
+  </div>
+</section>
+
+<div class="bg-sep"></div>
+
+<section class="section reveal">
+  <div class="sec-hd">
+    <span class="sec-tag">Hayatı ve Saltanatı</span>
+    <h2 class="sec-title">Kim Yavuz Sultan Selim?</h2>
+  </div>
+  <div class="bio-grid">
+    <div class="bio-text">
+      <p>Yavuz Sultan Selim, 1470'te Amasya'da doğdu. II. Bayezid'in oğlu olan Selim, taht mücadelesinde kardeşleri Ahmed ve Korkut'u alt ederek 1512'de Osmanlı tahtına çıktı. Tahta geçişindeki kararlılığı, saltanatı boyunca sergilediği sert ve hızlı eylem tarzının habercisiydi.</p>
+      <p>Selim'in ilk hedefi doğu idi. 1514'te Çaldıran Savaşı'nda Safevi Şahı İsmail'i büyük bir yenilgiye uğrattı. Bu zafer, doğu sınırını güvence altına aldı ve Anadolu'daki Şii propagandasını durdurdu. Ardından 1516'da Memlük Sultanlığı'nı Mercidâbık'ta yendi, 1517'de ise Kahire'yi alarak Mısır'ı fethetti.</p>
+      <p>Mısır'ın fethiyle birlikte son Abbasi halifesi, halifeliği Selim'e devretti. Böylece Osmanlı sultanları aynı zamanda İslam dünyasının dini liderleri haline geldi. Yalnızca 8 yıllık saltanatında imparatorluk topraklarını 1,6 milyondan 3,4 milyon km²'ye çıkardı — babası Bayezid'in tüm saltanatında kazanılanın neredeyse dört katı.</p>
+    </div>
+    <div class="bio-aside">
+      <h3>Hızlı Bilgi</h3>
+      <div class="bio-row"><span class="bio-key">Doğum</span><span class="bio-val">10 Ekim 1470, Amasya</span></div>
+      <div class="bio-row"><span class="bio-key">Ölüm</span><span class="bio-val">22 Eylül 1520, Çorlu</span></div>
+      <div class="bio-row"><span class="bio-key">Saltanat</span><span class="bio-val">1512 – 1520 (8 yıl)</span></div>
+      <div class="bio-row"><span class="bio-key">Babası</span><span class="bio-val">II. Bayezid</span></div>
+      <div class="bio-row"><span class="bio-key">Annesi</span><span class="bio-val">Gülbahar Hatun</span></div>
+      <div class="bio-row"><span class="bio-key">Lakabı</span><span class="bio-val">Yavuz (Şiddetli, Amansız)</span></div>
+      <div class="bio-row"><span class="bio-key">Unvanı</span><span class="bio-val">Hâdimü'l-Harameyn</span></div>
+      <div class="bio-row"><span class="bio-key">Önemli Zafer</span><span class="bio-val">Çaldıran 1514, Mısır 1517</span></div>
+      <div class="bio-row"><span class="bio-key">Oğlu</span><span class="bio-val">Kanuni Sultan Süleyman</span></div>
+      <div class="bio-row"><span class="bio-key">Mezarı</span><span class="bio-val">İstanbul, Yavuz Selim Camii</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="sec-hd reveal">
+    <span class="sec-tag">Önemli Başarılar</span>
+    <h2 class="sec-title">Yavuz'un Eserleri</h2>
+  </div>
+  <div class="ach-grid">
+    <div class="ach-card reveal">
+      <span class="ach-icon">⚡</span>
+      <div class="ach-title">Çaldıran Zaferi (1514)</div>
+      <p class="ach-desc">Safevi Şahı İsmail'i Çaldıran'da büyük bir yenilgiye uğratarak doğu sınırını güvence altına aldı. İran tehdidi ortadan kalktı.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">🌍</span>
+      <div class="ach-title">Mısır'ın Fethi (1517)</div>
+      <p class="ach-desc">Mercidâbık ve Ridâniye savaşlarında Memlük Sultanlığı'nı yenerek Mısır, Suriye ve Hicaz'ı Osmanlı'ya kattı.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">☪️</span>
+      <div class="ach-title">Halifeliğin Osmanlı'ya Geçişi</div>
+      <p class="ach-desc">Mısır'ın fethinin ardından son Abbasi halifesinden halifeliği devraldı. Osmanlı sultanları artık İslam dünyasının dini liderleri oldu.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">📈</span>
+      <div class="ach-title">8 Yılda %112 Toprak Artışı</div>
+      <p class="ach-desc">Tarihin en hızlı toprak genişlemelerinden birini gerçekleştirerek imparatorluğu 1,6'dan 3,4 milyon km²'ye çıkardı.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">🕌</span>
+      <div class="ach-title">Kutsal Emanetler</div>
+      <p class="ach-desc">Hz. Muhammed'in hırkası, kılıcı ve diğer kutsal emanetleri İstanbul'a getirerek Topkapı Sarayı'na yerleştirdi.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-icon">✍️</span>
+      <div class="ach-title">Şair Sultan</div>
+      <p class="ach-desc">"Mahlas-ı Selimi" adıyla Farsça şiirler yazan Yavuz, Osmanlı şiir geleneğine önemli katkılarda bulundu.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;padding-bottom:0;">
+  <div class="quote-block reveal">
+    <p>Bir saat adaletle hükmetmek, altmış yıllık ibadetten hayırlıdır.</p>
+    <cite>— Yavuz Sultan Selim</cite>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="sec-hd">
+    <span class="sec-tag">Kronoloji</span>
+    <h2 class="sec-title">Önemli Tarihler</h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">1470</div>
+      <div class="tl-title">Dünyaya Gelişi</div>
+      <p class="tl-desc">II. Bayezid ve Gülbahar Hatun'un oğlu olarak Amasya'da dünyaya geldi. Gençliğinde Trabzon sancakbeyi olarak görev yaptı.</p>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-year">1512</div>
+      <div class="tl-title">Tahta Çıkışı</div>
+      <p class="tl-desc">Kardeşlerine karşı yürüttüğü mücadeleyi kazanarak Osmanlı tahtına çıktı. Babası II. Bayezid tahtı oğluna devretti ve kısa süre sonra vefat etti.</p>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-year">1514</div>
+      <div class="tl-title">Çaldıran Zaferi</div>
+      <p class="tl-desc">Safevi Devleti ile yapılan bu savaşta Şah İsmail'i büyük bir yenilgiye uğrattı. Tebriz'i geçici olarak ele geçirdi.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1515–1516</div>
+      <div class="tl-title">Dulkadiroğulları ve Suriye Seferleri</div>
+      <p class="tl-desc">Dulkadiroğulları beyliğini ilhak etti. Mercidâbık Savaşı'nda Memlük kuvvetlerini bozguna uğratarak Suriye ve Filistin'i fethetti.</p>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-year">1517</div>
+      <div class="tl-title">Mısır'ın Fethi ve Halifelik</div>
+      <p class="tl-desc">Ridâniye Savaşı'nda son Memlük Sultanı Tomanbay'ı yenerek Mısır'ı fethetti. Son Abbasi halifesinden halifeliği devraldı.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1517–1520</div>
+      <div class="tl-title">Kutsal Emanetler ve Son Yıllar</div>
+      <p class="tl-desc">Hz. Muhammed'in kutsal emanetlerini İstanbul'a taşıdı. Batı seferine hazırlık yaparken sırtında çıkan apse (şirpençe) yüzünden 1520'de vefat etti.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1520</div>
+      <div class="tl-title">Vefatı ve Kanuni'nin Tahta Çıkışı</div>
+      <p class="tl-desc">50 yaşında hayatını kaybetti. Yerine oğlu Kanuni Sultan Süleyman geçti ve Osmanlı'nın altın çağını başlattı.</p>
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="legacy-grid">
+      <div class="legacy-item reveal">
+        <span class="legacy-n" data-count="8">0</span>
+        <span class="legacy-l">Yıllık Saltanat</span>
+        <p class="legacy-d">Kısa ama tarihin en yoğun dönemlerinden biri</p>
+      </div>
+      <div class="legacy-item reveal">
+        <span class="legacy-n" data-count="112">0</span>
+        <span class="legacy-l">% Toprak Artışı</span>
+        <p class="legacy-d">Osmanlı topraklarını 8 yılda iki katından fazlasına çıkardı</p>
+      </div>
+      <div class="legacy-item reveal">
+        <span class="legacy-n" data-count="3400000">0</span>
+        <span class="legacy-l">km² Miras</span>
+        <p class="legacy-d">Oğlu Kanuni'ye bıraktığı devasa imparatorluk</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sultan-nav">
+  <a href="fatih-sultan-mehmet.html" class="snav-link">← Fatih Sultan Mehmet</a>
+  <div class="snav-center"><a href="index.html">osmanlisultanlari.com</a></div>
+  <a href="kanuni-sultan-suleyman.html" class="snav-link">Kanuni Sultan Süleyman →</a>
+</div>
+
+<footer>
+  <span class="ft-logo">☽ Osmanlı Sultanları</span>
+  <div class="ft-copy">© osmanlisultanlari.com — Tarihin Derinliklerinden</div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+  function animCount(el){const t=parseInt(el.dataset.count),d=1800,s=Date.now();const tick=setInterval(()=>{const p=Math.min((Date.now()-s)/d,1),e=1-Math.pow(1-p,3),v=Math.floor(e*t);el.textContent=t>=1000000?(v/1000000).toFixed(1)+'M':t>=1000?(v).toLocaleString('tr-TR'):v.toString();if(p>=1){el.textContent=t>=1000000?(t/1000000).toFixed(1)+'M':t.toLocaleString('tr-TR');clearInterval(tick);}},16);}
+  const obs=new IntersectionObserver(entries=>{entries.forEach(en=>{if(!en.isIntersecting)return;en.target.classList.add('visible');en.target.querySelectorAll('[data-count]').forEach(animCount);obs.unobserve(en.target);});},{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.hero [data-count]').forEach(animCount),600);
+</script>
+</body>
+</html>

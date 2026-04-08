@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osmanlı Sultanları — Fatih Sultan Mehmet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+  :root {
+    --gold: #d4a843;
+    --gold-light: #f0c96a;
+    --gold-dark: #8a6a1a;
+    --bg: #0c0b08;
+    --bg2: #13110d;
+    --bg3: #1c1810;
+    --text: #e8dcc8;
+    --text-dim: #9a8a70;
+    --red: #8b1a1a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Libre Baskerville', serif;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(12,11,8,0.95);
+    border-bottom: 1px solid rgba(212,168,67,0.2);
+    padding: 14px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    backdrop-filter: blur(10px);
+  }
+  .nav-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase;
+    transition: color .3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(212,168,67,0.12) 0%, transparent 60%),
+      linear-gradient(180deg, #0c0b08 0%, #181410 60%, #0c0b08 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 100px 20px 60px;
+    position: relative; overflow: hidden;
+  }
+
+  /* Animated arabesk pattern */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(212,168,67,0.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(212,168,67,0.04) 0%, transparent 50%);
+    animation: pulse-bg 8s ease-in-out infinite alternate;
+  }
+  @keyframes pulse-bg {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+  }
+
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem; letter-spacing: 6px;
+    color: var(--gold-dark); text-transform: uppercase;
+    margin-bottom: 16px;
+    animation: fadeDown 1s ease both;
+  }
+
+  .hero-tugra {
+    font-size: 5rem; margin-bottom: 8px;
+    animation: fadeDown 1s .1s ease both;
+    filter: drop-shadow(0 0 30px rgba(212,168,67,0.4));
+  }
+
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 900; line-height: 1.1;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold), #a07820);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+    animation: fadeDown 1s .2s ease both;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--text-dim); letter-spacing: 4px;
+    margin-bottom: 24px;
+    animation: fadeDown 1s .3s ease both;
+  }
+
+  .hero-dates {
+    font-size: 0.85rem; color: var(--gold-dark);
+    letter-spacing: 3px; margin-bottom: 48px;
+    animation: fadeDown 1s .4s ease both;
+  }
+
+  .hero-divider {
+    width: 200px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 40px;
+    animation: fadeIn 1.5s .5s ease both;
+  }
+
+  .hero-quote {
+    font-style: italic; font-size: 1rem;
+    color: var(--text-dim); max-width: 600px;
+    line-height: 1.8; margin-bottom: 56px;
+    animation: fadeIn 1.5s .6s ease both;
+  }
+
+  .hero-stats {
+    display: flex; gap: 60px; flex-wrap: wrap; justify-content: center;
+    animation: fadeIn 1.5s .7s ease both;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem; font-weight: 700;
+    color: var(--gold); display: block;
+  }
+  .hero-stat-label {
+    font-size: 0.7rem; letter-spacing: 2px;
+    color: var(--text-dim); text-transform: uppercase;
+  }
+
+  .scroll-hint {
+    position: absolute; bottom: 30px;
+    left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: var(--gold-dark); font-size: 0.7rem; letter-spacing: 2px;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem; letter-spacing: 5px; color: var(--gold-dark);
+    text-transform: uppercase; text-align: center; margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 700;
+    text-align: center; color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .section-divider {
+    width: 120px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 56px;
+  }
+
+  /* ─── MIND MAP / DIYAGRAM ─── */
+  .diagram-section {
+    background: var(--bg2);
+    padding: 80px 0;
+    border-top: 1px solid rgba(212,168,67,0.1);
+    border-bottom: 1px solid rgba(212,168,67,0.1);
+  }
+  .diagram-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+  .mindmap-container {
+    position: relative;
+    width: 100%; height: 680px;
+    margin-top: 20px;
+  }
+  .mindmap-svg {
+    width: 100%; height: 100%;
+    overflow: visible;
+  }
+
+  /* Branch cards */
+  .branch-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px; margin-top: 48px;
+  }
+  .branch-card {
+    background: var(--bg3);
+    border: 1px solid rgba(212,168,67,0.15);
+    border-top: 3px solid var(--gold-dark);
+    border-radius: 4px;
+    padding: 24px 20px;
+    transition: transform .3s, border-color .3s, box-shadow .3s;
+    cursor: default;
+  }
+  .branch-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212,168,67,0.5);
+    box-shadow: 0 8px 32px rgba(212,168,67,0.08);
+  }
+  .branch-card-icon { font-size: 1.8rem; margin-bottom: 12px; }
+  .branch-card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem; font-weight: 700;
+    color: var(--gold); margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .branch-card-items { list-style: none; }
+  .branch-card-items li {
+    font-size: 0.8rem; color: var(--text-dim);
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .branch-card-items li::before {
+    content: '◆'; color: var(--gold-dark); font-size: 0.5rem; flex-shrink: 0;
+  }
+
+  /* ─── TIMELINE ─── */
+  .timeline { position: relative; padding: 20px 0; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 50%; transform: translateX(-50%);
+    top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(180deg, transparent, var(--gold-dark), transparent);
+  }
+  .timeline-item {
+    display: flex; gap: 40px;
+    margin-bottom: 48px;
+    align-items: flex-start;
+  }
+  .timeline-item:nth-child(odd) { flex-direction: row; }
+  .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+
+  .timeline-content {
+    width: calc(50% - 40px);
+    background: var(--bg3);
+    border: 1px solid rgba(212,168,67,0.12);
+    border-radius: 4px;
+    padding: 20px 24px;
+    transition: border-color .3s;
+  }
+  .timeline-content:hover { border-color: rgba(212,168,67,0.4); }
+
+  .timeline-year {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--gold); margin-bottom: 6px;
+  }
+  .timeline-event {
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--text); margin-bottom: 6px;
+  }
+  .timeline-desc { font-size: 0.8rem; color: var(--text-dim); line-height: 1.7; }
+
+  .timeline-dot {
+    width: 14px; height: 14px;
+    background: var(--gold-dark);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0; margin-top: 20px;
+    position: relative; z-index: 1;
+    box-shadow: 0 0 16px rgba(212,168,67,0.4);
+  }
+  .timeline-spacer { width: calc(50% - 40px); }
+
+  /* ─── CONQUESTS MAP ─── */
+  .conquest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .conquest-card {
+    background: var(--bg3);
+    border: 1px solid rgba(212,168,67,0.1);
+    border-radius: 4px; padding: 28px;
+    position: relative; overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .conquest-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+  }
+  .conquest-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  .conquest-year {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem; font-weight: 900;
+    color: rgba(212,168,67,0.2); position: absolute;
+    top: 16px; right: 20px; line-height: 1;
+  }
+  .conquest-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--gold); margin-bottom: 6px;
+  }
+  .conquest-location {
+    font-size: 0.75rem; color: var(--text-dim);
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .conquest-desc { font-size: 0.82rem; color: var(--text-dim); line-height: 1.7; }
+
+  /* ─── ACHIEVEMENTS ─── */
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .achievement {
+    text-align: center; padding: 32px 20px;
+    background: var(--bg3);
+    border: 1px solid rgba(212,168,67,0.1);
+    border-radius: 4px;
+    transition: border-color .3s, transform .3s;
+  }
+  .achievement:hover {
+    border-color: rgba(212,168,67,0.4);
+    transform: translateY(-4px);
+  }
+  .achievement-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
+  .achievement-num {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem; font-weight: 900;
+    color: var(--gold); display: block; margin-bottom: 6px;
+  }
+  .achievement-label {
+    font-size: 0.75rem; color: var(--text-dim);
+    letter-spacing: 1.5px; line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  /* ─── FULL-WIDTH SEPARATOR ─── */
+  .full-sep {
+    background: var(--bg2);
+    border-top: 1px solid rgba(212,168,67,0.08);
+    border-bottom: 1px solid rgba(212,168,67,0.08);
+  }
+
+  /* ─── ARCHITECTURE ─── */
+  .arch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .arch-card {
+    background: var(--bg3);
+    border: 1px solid rgba(212,168,67,0.1);
+    border-radius: 4px; padding: 24px;
+    display: flex; gap: 16px; align-items: flex-start;
+    transition: border-color .3s;
+  }
+  .arch-card:hover { border-color: rgba(212,168,67,0.4); }
+  .arch-icon { font-size: 2rem; flex-shrink: 0; }
+  .arch-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--gold); margin-bottom: 4px;
+  }
+  .arch-detail { font-size: 0.78rem; color: var(--text-dim); line-height: 1.6; }
+
+  /* ─── SULTANS CAROUSEL ─── */
+  .sultans-section {
+    background: var(--bg2);
+    border-top: 1px solid rgba(212,168,67,0.1);
+    padding: 80px 40px;
+  }
+  .sultans-grid {
+    display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .sultan-card {
+    width: 160px; text-align: center;
+    background: var(--bg3);
+    border: 1px solid rgba(212,168,67,0.12);
+    border-radius: 4px; padding: 24px 16px;
+    transition: border-color .3s, transform .3s;
+    cursor: pointer; position: relative;
+  }
+  .sultan-card.active {
+    border-color: var(--gold);
+    box-shadow: 0 0 24px rgba(212,168,67,0.15);
+  }
+  .sultan-card:not(.active) { opacity: 0.5; }
+  .sultan-card:not(.active):hover { opacity: 0.7; transform: scale(1.02); }
+  .sultan-card-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem; color: var(--gold-dark);
+    letter-spacing: 2px; margin-bottom: 8px;
+  }
+  .sultan-card-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem; font-weight: 700;
+    color: var(--text); line-height: 1.4; margin-bottom: 6px;
+  }
+  .sultan-card-reign {
+    font-size: 0.68rem; color: var(--text-dim);
+  }
+  .soon-badge {
+    position: absolute; top: 8px; right: 8px;
+    background: rgba(212,168,67,0.15);
+    color: var(--gold-dark);
+    font-size: 0.55rem; letter-spacing: 1px;
+    padding: 2px 5px; border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid rgba(212,168,67,0.1);
+    color: var(--text-dim); font-size: 0.78rem;
+    letter-spacing: 1px;
+  }
+  footer a { color: var(--gold-dark); text-decoration: none; }
+
+  /* ─── PROGRESS BARS ─── */
+  .skills-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px 48px;
+  }
+  .skill-row { margin-bottom: 12px; }
+  .skill-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.78rem; color: var(--text-dim);
+    margin-bottom: 6px; letter-spacing: 1px;
+  }
+  .skill-bar {
+    height: 4px; background: rgba(255,255,255,0.05);
+    border-radius: 2px; overflow: hidden;
+  }
+  .skill-fill {
+    height: 100%; border-radius: 2px;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+    width: 0; transition: width 1.5s ease;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 12px 20px; }
+    .nav-links { display: none; }
+    section { padding: 60px 20px; }
+    .timeline::before { left: 20px; }
+    .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; }
+    .timeline-content, .timeline-spacer { width: 100%; margin-left: 40px; }
+    .timeline-dot { position: absolute; left: 14px; }
+    .timeline-item { position: relative; padding-left: 0; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .mindmap-container { height: 400px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">☽ Osmanlı Sultanları</a>
+  <ul class="nav-links">
+    <li><a href="#diyagram">Diyagram</a></li>
+    <li><a href="#fetihler">Fetihler</a></li>
+    <li><a href="#timeline">Kronoloji</a></li>
+    <li><a href="#mimarlik">Mimarlık</a></li>
+    <li><a href="#sultanlar">Sultanlar</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">osmanlisultanlari.com · VII. Osmanlı Padişahı</p>
+  <div class="hero-tugra">☽</div>
+  <h1 class="hero-title">Fatih Sultan Mehmet</h1>
+  <p class="hero-subtitle">El-Fatih · Kayser-i Rum</p>
+  <p class="hero-dates">30 Mart 1432 – 3 Mayıs 1481</p>
+  <div class="hero-divider"></div>
+  <p class="hero-quote">
+    "İstanbul'u fetheden komutan ne büyük bir komutandır,<br>
+    onu fetheden ordu ne büyük bir ordudur."
+    <br><small style="opacity:.5;font-size:.75rem">— Hz. Muhammed (s.a.v.)</small>
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="21">0</span>
+      <span class="hero-stat-label">Fetih Yaşı</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="30">0</span>
+      <span class="hero-stat-label">Yıllık Saltanat</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="25">0</span>
+      <span class="hero-stat-label">Sefer Düzenledi</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="7">0</span>
+      <span class="hero-stat-label">Dil Biliyordu</span>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>KEŞFET</span>
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
+      <path d="M8 0v20M1 13l7 8 7-8" stroke="#8a6a1a" stroke-width="1.5"/>
+    </svg>
+  </div>
+</div>
+
+<!-- DIYAGRAM -->
+<div class="diagram-section" id="diyagram">
+  <div class="diagram-wrapper">
+    <p class="section-label">İnfografik Diyagram</p>
+    <h2 class="section-title">Fatih Sultan Mehmet Kimdir?</h2>
+    <div class="section-divider"></div>
+
+    <!-- SVG Mind Map -->
+    <div class="mindmap-container">
+      <svg class="mindmap-svg" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#d4a843" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#8a6a1a" stop-opacity="0.05"/>
+          </radialGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L6,3 z" fill="#8a6a1a" opacity="0.5"/>
+          </marker>
+        </defs>
+
+        <!-- Center glow -->
+        <circle cx="450" cy="300" r="100" fill="url(#centerGrad)"/>
+        <circle cx="450" cy="300" r="70" fill="none" stroke="#d4a843" stroke-width="1" stroke-dasharray="4,4" opacity="0.3">
+          <animateTransform attributeName="transform" type="rotate" from="0 450 300" to="360 450 300" dur="30s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Branch lines -->
+        <!-- Fetihler (left-top) -->
+        <line x1="390" y1="265" x2="180" y2="140" stroke="#c9303a" stroke-width="1.5" opacity="0.5" stroke-dasharray="6,3"/>
+        <!-- Mimarlık (left-bottom) -->
+        <line x1="390" y1="335" x2="180" y2="430" stroke="#d4a843" stroke-width="1.5" opacity="0.5" stroke-dasharray="6,3"/>
+        <!-- İlim (right-top) -->
+        <line x1="510" y1="265" x2="720" y2="140" stroke="#4a90d9" stroke-width="1.5" opacity="0.5" stroke-dasharray="6,3"/>
+        <!-- Reformlar (right-bottom) -->
+        <line x1="510" y1="335" x2="720" y2="430" stroke="#6db86d" stroke-width="1.5" opacity="0.5" stroke-dasharray="6,3"/>
+        <!-- Kişilik (top) -->
+        <line x1="450" y1="230" x2="450" y2="110" stroke="#c9a843" stroke-width="1.5" opacity="0.5" stroke-dasharray="6,3"/>
+        <!-- Aile (bottom) -->
+        <line x1="450" y1="370" x2="450" y2="490" stroke="#b06030" stroke-width="1.5" opacity="0.5" stroke-dasharray="6,3"/>
+
+        <!-- CENTER NODE -->
+        <circle cx="450" cy="300" r="68" fill="#1c1810" stroke="#d4a843" stroke-width="2" filter="url(#glow)"/>
+        <text x="450" y="290" text-anchor="middle" font-family="Cinzel,serif" font-size="13" font-weight="700" fill="#d4a843">FATİH</text>
+        <text x="450" y="308" text-anchor="middle" font-family="Cinzel,serif" font-size="11" fill="#d4a843">SULTAN</text>
+        <text x="450" y="324" text-anchor="middle" font-family="Cinzel,serif" font-size="11" fill="#d4a843">MEHMET</text>
+
+        <!-- FETIHLER NODE (left-top) -->
+        <circle cx="160" cy="130" r="48" fill="#1c0e10" stroke="#c9303a" stroke-width="1.5"/>
+        <text x="160" y="124" text-anchor="middle" font-family="Cinzel,serif" font-size="11" font-weight="700" fill="#e05555">⚔</text>
+        <text x="160" y="140" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#e05555">Fetihler</text>
+        <!-- Sub nodes -->
+        <rect x="22" y="48" width="100" height="22" rx="3" fill="#1c0e10" stroke="#c9303a" stroke-width="1" opacity="0.7"/>
+        <text x="72" y="63" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">İstanbul 1453</text>
+        <line x1="116" y1="95" x2="122" y2="70" stroke="#c9303a" stroke-width="0.8" opacity="0.4"/>
+
+        <rect x="22" y="16" width="100" height="22" rx="3" fill="#1c0e10" stroke="#c9303a" stroke-width="1" opacity="0.7"/>
+        <text x="72" y="31" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">Trabzon 1461</text>
+
+        <rect x="0" y="78" width="100" height="22" rx="3" fill="#1c0e10" stroke="#c9303a" stroke-width="1" opacity="0.7"/>
+        <text x="50" y="93" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">Sırbistan 1459</text>
+
+        <!-- MIMARLIK NODE (left-bottom) -->
+        <circle cx="160" cy="450" r="48" fill="#1a160c" stroke="#d4a843" stroke-width="1.5"/>
+        <text x="160" y="444" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#d4a843">🕌</text>
+        <text x="160" y="462" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#d4a843">Mimarlık</text>
+        <rect x="22" y="510" width="110" height="22" rx="3" fill="#1a160c" stroke="#d4a843" stroke-width="1" opacity="0.7"/>
+        <text x="77" y="525" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">Topkapı Sarayı</text>
+        <line x1="135" y1="498" x2="126" y2="510" stroke="#d4a843" stroke-width="0.8" opacity="0.4"/>
+        <rect x="10" y="540" width="100" height="22" rx="3" fill="#1a160c" stroke="#d4a843" stroke-width="1" opacity="0.7"/>
+        <text x="60" y="555" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">Fatih Camii</text>
+
+        <!-- İLİM NODE (right-top) -->
+        <circle cx="740" cy="130" r="48" fill="#0e1420" stroke="#4a90d9" stroke-width="1.5"/>
+        <text x="740" y="124" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#6ab0e8">📚</text>
+        <text x="740" y="142" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#6ab0e8">İlim & Sanat</text>
+        <rect x="778" y="48" width="106" height="22" rx="3" fill="#0e1420" stroke="#4a90d9" stroke-width="1" opacity="0.7"/>
+        <text x="831" y="63" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">7 Dil Bilirdi</text>
+        <line x1="784" y1="94" x2="779" y2="70" stroke="#4a90d9" stroke-width="0.8" opacity="0.4"/>
+        <rect x="778" y="16" width="106" height="22" rx="3" fill="#0e1420" stroke="#4a90d9" stroke-width="1" opacity="0.7"/>
+        <text x="831" y="31" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">Şiir Yazardı</text>
+        <rect x="790" y="80" width="100" height="22" rx="3" fill="#0e1420" stroke="#4a90d9" stroke-width="1" opacity="0.7"/>
+        <text x="840" y="95" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">Matematik Sevdi</text>
+
+        <!-- REFORMLAR NODE (right-bottom) -->
+        <circle cx="740" cy="450" r="48" fill="#0e180e" stroke="#6db86d" stroke-width="1.5"/>
+        <text x="740" y="444" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#8dd88d">⚖</text>
+        <text x="740" y="462" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#8dd88d">Reformlar</text>
+        <rect x="778" y="510" width="110" height="22" rx="3" fill="#0e180e" stroke="#6db86d" stroke-width="1" opacity="0.7"/>
+        <text x="833" y="525" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">Kanunname</text>
+        <line x1="784" y1="498" x2="779" y2="510" stroke="#6db86d" stroke-width="0.8" opacity="0.4"/>
+        <rect x="780" y="540" width="108" height="22" rx="3" fill="#0e180e" stroke="#6db86d" stroke-width="1" opacity="0.7"/>
+        <text x="834" y="555" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">İstanbul Başkent</text>
+
+        <!-- KİŞİLİK NODE (top) -->
+        <circle cx="450" cy="90" r="44" fill="#16120e" stroke="#c9a843" stroke-width="1.5"/>
+        <text x="450" y="84" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#c9a843">👑</text>
+        <text x="450" y="102" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#c9a843">Kişilik</text>
+        <rect x="360" y="16" width="90" height="20" rx="3" fill="#16120e" stroke="#c9a843" stroke-width="1" opacity="0.7"/>
+        <text x="405" y="30" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">Cesur & Kararlı</text>
+        <rect x="454" y="16" width="86" height="20" rx="3" fill="#16120e" stroke="#c9a843" stroke-width="1" opacity="0.7"/>
+        <text x="497" y="30" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">Zeki & Stratejist</text>
+
+        <!-- AİLE NODE (bottom) -->
+        <circle cx="450" cy="510" r="44" fill="#180e0a" stroke="#b06030" stroke-width="1.5"/>
+        <text x="450" y="504" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#d08040">👁</text>
+        <text x="450" y="522" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#d08040">Aile</text>
+        <rect x="360" y="560" width="80" height="20" rx="3" fill="#180e0a" stroke="#b06030" stroke-width="1" opacity="0.7"/>
+        <text x="400" y="574" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">2. Murat oğlu</text>
+        <rect x="454" y="560" width="86" height="20" rx="3" fill="#180e0a" stroke="#b06030" stroke-width="1" opacity="0.7"/>
+        <text x="497" y="574" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e8dcc8">Bayezid II babası</text>
+      </svg>
+    </div>
+
+    <!-- Branch Detail Cards -->
+    <div class="branch-cards">
+      <div class="branch-card">
+        <div class="branch-card-icon">⚔️</div>
+        <div class="branch-card-title">Askeri Fetihler</div>
+        <ul class="branch-card-items">
+          <li>İstanbul'un Fethi (1453)</li>
+          <li>Sırbistan Seferi (1459)</li>
+          <li>Mora'nın Fethi (1460)</li>
+          <li>Trabzon İmparatorluğu (1461)</li>
+          <li>Eflak & Boğdan Seferleri</li>
+          <li>Otlukbeli Zaferi (1473)</li>
+        </ul>
+      </div>
+      <div class="branch-card">
+        <div class="branch-card-icon">🕌</div>
+        <div class="branch-card-title">Mimari Eserler</div>
+        <ul class="branch-card-items">
+          <li>Topkapı Sarayı (1478)</li>
+          <li>Fatih Külliyesi (1470)</li>
+          <li>Rumeli Hisarı (1452)</li>
+          <li>Kapalıçarşı (1461)</li>
+          <li>Eyüp Sultan Türbesi</li>
+          <li>Yedikule Hisarı</li>
+        </ul>
+      </div>
+      <div class="branch-card">
+        <div class="branch-card-icon">📚</div>
+        <div class="branch-card-title">İlim & Sanat</div>
+        <ul class="branch-card-items">
+          <li>7 dil bilirdi (Türkçe, Arapça, Farsça...)</li>
+          <li>"Avnî" mahlasıyla şiir yazdı</li>
+          <li>Matematik ve astronomiyle ilgilendi</li>
+          <li>Batılı sanatçıları sarayına çekti</li>
+          <li>Gentile Bellini'ye portresini yaptırdı</li>
+          <li>Büyük kütüphane kurdu</li>
+        </ul>
+      </div>
+      <div class="branch-card">
+        <div class="branch-card-icon">⚖️</div>
+        <div class="branch-card-title">Reformlar</div>
+        <ul class="branch-card-items">
+          <li>Kanunname-i Ali Osman</li>
+          <li>İstanbul'u başkent yaptı</li>
+          <li>Devşirme sistemini geliştirdi</li>
+          <li>Dini hoşgörü politikası</li>
+          <li>Bizans kiliselerini korudu</li>
+          <li>Ticaret yollarını yeniden açtı</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<section>
+  <p class="section-label">Rakamlarla</p>
+  <h2 class="section-title">Fatih'in Mirası</h2>
+  <div class="section-divider"></div>
+  <div class="achievements-grid">
+    <div class="achievement">
+      <span class="achievement-icon">🏰</span>
+      <span class="achievement-num" data-count="25">0</span>
+      <span class="achievement-label">Askeri Sefer<br>Düzenledi</span>
+    </div>
+    <div class="achievement">
+      <span class="achievement-icon">📜</span>
+      <span class="achievement-num" data-count="1453">0</span>
+      <span class="achievement-label">İstanbul'un<br>Fetih Yılı</span>
+    </div>
+    <div class="achievement">
+      <span class="achievement-icon">🗺️</span>
+      <span class="achievement-num" data-count="2200000">0</span>
+      <span class="achievement-label">km² İmparatorluk<br>Toprakları</span>
+    </div>
+    <div class="achievement">
+      <span class="achievement-icon">📚</span>
+      <span class="achievement-num" data-count="7">0</span>
+      <span class="achievement-label">Konuştuğu<br>Dil Sayısı</span>
+    </div>
+    <div class="achievement">
+      <span class="achievement-icon">🕌</span>
+      <span class="achievement-num" data-count="300">0</span>
+      <span class="achievement-label">İnşa Edilen<br>Yapı</span>
+    </div>
+    <div class="achievement">
+      <span class="achievement-icon">👑</span>
+      <span class="achievement-num" data-count="30">0</span>
+      <span class="achievement-label">Yıllık<br>Saltanat</span>
+    </div>
+  </div>
+</section>
+
+<!-- KİŞİSEL ÖZELLİKLER -->
+<div class="full-sep">
+<section>
+  <p class="section-label">Karakter Analizi</p>
+  <h2 class="section-title">Kişisel Özellikleri</h2>
+  <div class="section-divider"></div>
+  <div class="skills-grid">
+    <div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Askeri Strateji</span><span>98%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="98"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Diplomasi</span><span>85%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Dil Bilgisi</span><span>95%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Mimarlık Vizyonu</span><span>90%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Sanat & Edebiyat</span><span>80%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Ekonomi Yönetimi</span><span>78%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Matematik & Bilim</span><span>82%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Liderlik</span><span>97%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="97"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- FETIHLER -->
+<section id="fetihler">
+  <p class="section-label">Askeri Zaferler</p>
+  <h2 class="section-title">Büyük Fetihler</h2>
+  <div class="section-divider"></div>
+  <div class="conquest-grid">
+    <div class="conquest-card">
+      <div class="conquest-year">1453</div>
+        <div class="conquest-name">İstanbul'un Fethi</div>
+      <div class="conquest-location">Konstantinopolis · Bizans İmparatorluğu</div>
+      <div class="conquest-desc">1453 yılında 21 yaşındaki Fatih Sultan Mehmet, 57 günlük kuşatmanın ardından Bizans İmparatorluğu'nun başkenti Konstantinopolis'i fethetti. Bu fetih, Orta Çağ'ın sona erip Yeni Çağ'ın başlaması olarak kabul edilir.</div>
+    </div>
+    <div class="conquest-card">
+      <div class="conquest-year">1456</div>
+      <div class="conquest-name">Atina'nın Fethi</div>
+      <div class="conquest-location">Atina · Katalanya Dükalığı</div>
+      <div class="conquest-desc">Atina ve çevresi Osmanlı kontrolüne alındı. Fatih, Atina'yı ziyaret ederek antik eserleri koruma altına almıştır. Akropolis'e büyük ilgi duyduğu bilinmektedir.</div>
+    </div>
+    <div class="conquest-card">
+      <div class="conquest-year">1461</div>
+      <div class="conquest-name">Trabzon'un Fethi</div>
+      <div class="conquest-location">Trabzon · Trabzon İmparatorluğu</div>
+      <div class="conquest-desc">Karadeniz'in doğusundaki son Bizans kalıntısı olan Trabzon İmparatorluğu'na son verildi. Bu fetihle Anadolu'nun tamamı Osmanlı hâkimiyetine girdi.</div>
+    </div>
+    <div class="conquest-card">
+      <div class="conquest-year">1473</div>
+      <div class="conquest-name">Otlukbeli Zaferi</div>
+      <div class="conquest-location">Doğu Anadolu · Akkoyunlu Devleti</div>
+      <div class="conquest-desc">Uzun Hasan önderliğindeki Akkoyunlu Devleti'ni kesin yenilgiye uğrattı. Bu zafer, Osmanlı'nın Doğu Anadolu üzerindeki egemenliğini pekiştirdi.</div>
+    </div>
+    <div class="conquest-card">
+      <div class="conquest-year">1459</div>
+      <div class="conquest-name">Sırbistan'ın Fethi</div>
+      <div class="conquest-location">Belgrad · Sırbistan Despotluğu</div>
+      <div class="conquest-desc">Sırbistan Despotluğu'na son verilerek bölge Osmanlı yönetimine katıldı. Belgrad dışındaki tüm Sırbistan toprakları bu dönemde alındı.</div>
+    </div>
+    <div class="conquest-card">
+      <div class="conquest-year">1460</div>
+      <div class="conquest-name">Mora'nın Fethi</div>
+      <div class="conquest-location">Mora Yarımadası · Bizans Despotluğu</div>
+      <div class="conquest-desc">Yunanistan'ın güneyindeki Mora Yarımadası fethedildi. Böylece Balkan'lardaki Bizans kalıntıları tamamen tasfiye edildi.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TİMELİNE -->
+<div class="full-sep">
+<section id="timeline" style="max-width:900px">
+  <p class="section-label">Kronoloji</p>
+  <h2 class="section-title">Hayatı & Saltanatı</h2>
+  <div class="section-divider"></div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <div class="timeline-year">1432</div>
+        <div class="timeline-event">Edirne'de Doğdu</div>
+        <div class="timeline-desc">30 Mart 1432'de Edirne'de, Sultan II. Murat'ın oğlu olarak dünyaya geldi. Annesinin kim olduğu tartışmalıdır.</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-spacer"></div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-spacer"></div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-year">1444</div>
+        <div class="timeline-event">İlk Saltanat Dönemi</div>
+        <div class="timeline-desc">12 yaşında ilk kez padişah oldu. II. Murat'ın çekilmesiyle Manisa'dan İstanbul'a çağrıldı. Varna Savaşı'nı yönetti.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <div class="timeline-year">1451</div>
+        <div class="timeline-event">Tahtı Devraldı</div>
+        <div class="timeline-desc">Babası II. Murat'ın vefatıyla 19 yaşında ikinci kez tahta çıktı. İlk iş olarak İstanbul'u fethetme planlarını hayata geçirdi.</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-spacer"></div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-spacer"></div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-year">1452</div>
+        <div class="timeline-event">Rumeli Hisarı İnşası</div>
+        <div class="timeline-desc">İstanbul kuşatmasına hazırlık için Boğaz'ın en dar noktasına Rumeli Hisarı'nı yaptırdı. İnşaat yalnızca 4 ayda tamamlandı.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <div class="timeline-year">1453</div>
+        <div class="timeline-event">İstanbul'un Fethi ⭐</div>
+        <div class="timeline-desc">29 Mayıs 1453'te Konstantinopolis fethedildi. 57 günlük kuşatmanın ardından 21 yaşındaki Fatih tarihe geçti. "Kayser-i Rum" unvanını aldı.</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-spacer"></div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-spacer"></div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-year">1456–1473</div>
+        <div class="timeline-event">Fetihler Dönemi</div>
+        <div class="timeline-desc">Sırbistan, Mora, Atina, Trabzon, Arnavutluk ve Kırım Hanlığı Osmanlı topraklarına katıldı. İmparatorluk 3 kıtaya yayıldı.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <div class="timeline-year">1478</div>
+        <div class="timeline-event">Topkapı Sarayı Tamamlandı</div>
+        <div class="timeline-desc">İstanbul'un kalbinde, Bizans sarayının yerine Topkapı Sarayı inşa edildi. Yüzyıllarca Osmanlı'nın yönetim merkezi oldu.</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-spacer"></div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-spacer"></div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-year">1481</div>
+        <div class="timeline-event">Vefatı</div>
+        <div class="timeline-desc">3 Mayıs 1481'de Gebze yakınlarında, İtalya seferine çıkarken vefat etti. 49 yaşındaydı. Fatih Camii'ne defnedildi.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- MİMARLIK -->
+<section id="mimarlik">
+  <p class="section-label">Kalıcı Miras</p>
+  <h2 class="section-title">Mimari Eserleri</h2>
+  <div class="section-divider"></div>
+  <div class="arch-grid">
+    <div class="arch-card">
+      <div class="arch-icon">🏯</div>
+      <div>
+        <div class="arch-name">Topkapı Sarayı</div>
+        <div class="arch-detail">1459–1478 yılları arasında inşa edildi. 400 yıl boyunca Osmanlı padişahlarının ikametgâhı ve devlet merkezi oldu.</div>
+      </div>
+    </div>
+    <div class="arch-card">
+      <div class="arch-icon">🕌</div>
+      <div>
+        <div class="arch-name">Fatih Camii & Külliyesi</div>
+        <div class="arch-detail">1470'te tamamlanan külliye; cami, medrese, imaret, kütüphane ve hamam içermektedir. İstanbul'un ilk büyük Osmanlı külliyesidir.</div>
+      </div>
+    </div>
+    <div class="arch-card">
+      <div class="arch-icon">🏰</div>
+      <div>
+        <div class="arch-name">Rumeli Hisarı</div>
+        <div class="arch-detail">1452'de Boğaz'ın Avrupa yakasına, yalnızca 4 ayda inşa edildi. İstanbul kuşatmasının kilit noktasıydı.</div>
+      </div>
+    </div>
+    <div class="arch-card">
+      <div class="arch-icon">🏪</div>
+      <div>
+        <div class="arch-name">Kapalıçarşı</div>
+        <div class="arch-detail">1461'de kurulan Kapalıçarşı, dünyanın en büyük ve en eski kapalı çarşılarından biri olarak günümüze ulaşmıştır.</div>
+      </div>
+    </div>
+    <div class="arch-card">
+      <div class="arch-icon">⛪</div>
+      <div>
+        <div class="arch-name">Ayasofya'nın Dönüşümü</div>
+        <div class="arch-detail">Fethin ardından Ayasofya camiye çevrildi. Fatih, kilise yapısını ve mozaikleri koruma altına alan fermanlar çıkardı.</div>
+      </div>
+    </div>
+    <div class="arch-card">
+      <div class="arch-icon">🏛️</div>
+      <div>
+        <div class="arch-name">Yedikule Hisarı</div>
+        <div class="arch-detail">Bizans'ın Altınkapı surlarına eklenen kuleler ile tamamlanan Yedikule, hem kale hem de hazine deposu olarak kullanıldı.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DİĞER SULTANLAR -->
+<div class="sultans-section" id="sultanlar">
+  <p class="section-label">Osmanlı Sultanları</p>
+  <h2 class="section-title" style="text-align:center; color:var(--gold); font-family:'Cinzel',serif; margin-bottom:12px;">Diğer Padişahlar</h2>
+  <div class="section-divider"></div>
+  <div class="sultans-grid">
+    <div class="sultan-card">
+      <div class="sultan-card-num">I. SULTAN</div>
+      <div class="sultan-card-name">Osman Gazi</div>
+      <div class="sultan-card-reign">1299 – 1326</div>
+      <span class="soon-badge">Yakında</span>
+    </div>
+    <div class="sultan-card">
+      <div class="sultan-card-num">IV. SULTAN</div>
+      <div class="sultan-card-name">I. Bayezid (Yıldırım)</div>
+      <div class="sultan-card-reign">1389 – 1402</div>
+      <span class="soon-badge">Yakında</span>
+    </div>
+    <div class="sultan-card">
+      <div class="sultan-card-num">VI. SULTAN</div>
+      <div class="sultan-card-name">II. Murat</div>
+      <div class="sultan-card-reign">1421 – 1451</div>
+      <span class="soon-badge">Yakında</span>
+    </div>
+    <div class="sultan-card active">
+      <div class="sultan-card-num">VII. SULTAN</div>
+      <div class="sultan-card-name">Fatih Sultan Mehmet</div>
+      <div class="sultan-card-reign">1451 – 1481</div>
+    </div>
+    <div class="sultan-card">
+      <div class="sultan-card-num">IX. SULTAN</div>
+      <div class="sultan-card-name">Yavuz Sultan Selim</div>
+      <div class="sultan-card-reign">1512 – 1520</div>
+      <span class="soon-badge">Yakında</span>
+    </div>
+    <div class="sultan-card">
+      <div class="sultan-card-num">X. SULTAN</div>
+      <div class="sultan-card-name">Kanuni Sultan Süleyman</div>
+      <div class="sultan-card-reign">1520 – 1566</div>
+      <span class="soon-badge">Yakında</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-family:'Cinzel',serif; font-size:1.1rem; color:var(--gold); margin-bottom:12px;">☽ Osmanlı Sultanları</p>
+  <p>osmanlisultanlari.com · Osmanlı İmparatorluğu'nun büyük padişahlarına adanmıştır.</p>
+  <p style="margin-top:8px; font-size:0.7rem; opacity:.4;">© 2026 · Tüm hakları saklıdır.</p>
+</footer>
+
+<script>
+  // ─── COUNTER ANIMATION ───
+  function animateCount(el) {
+    const target = parseInt(el.dataset.count);
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      if (target >= 1000000) {
+        el.textContent = (current / 1000000).toFixed(1) + 'M';
+      } else if (target >= 1000) {
+        el.textContent = Math.floor(current).toLocaleString('tr-TR');
+      } else {
+        el.textContent = Math.floor(current);
+      }
+    }, 16);
+  }
+
+  // ─── PROGRESS BAR ANIMATION ───
+  function animateBars(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  // ─── INTERSECTION OBSERVER ───
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Counter
+        if (entry.target.dataset.count) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target);
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('[data-count]').forEach(el => observer.observe(el));
+
+  const barObserver = new IntersectionObserver(animateBars, { threshold: 0.2 });
+  document.querySelectorAll('.skills-grid').forEach(el => barObserver.observe(el));
+
+  // ─── SCROLL REVEAL ───
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.branch-card, .conquest-card, .arch-card, .achievement, .timeline-content').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    revealObserver.observe(el);
+  });
+
+  // ─── NAV ACTIVE ───
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.background = window.scrollY > 50
+      ? 'rgba(12,11,8,0.98)'
+      : 'rgba(12,11,8,0.95)';
+  });
+</script>
+
+</body>
+</html>
